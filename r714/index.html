@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>日本株式投資者調査</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Noto Sans JP", "Yu Gothic Medium", "游ゴシック Medium", "Yu Gothic", "游ゴシック", "Meiryo", "メイリオ", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            color: #333;
+            line-height: 1.7;
+            min-height: 100vh;
+            overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            font-feature-settings: "kern" 1;
+            text-rendering: optimizeLegibility;
+        }
+        
+        .container {
+            max-width: 480px;
+            margin: 0 auto;
+            background: white;
+            min-height: 100vh;
+            box-shadow: 0 0 20px rgba(0,0,0,0.1);
+        }
+        
+        .header {
+            text-align: center;
+            padding: 30px 20px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+        }
+        
+        .avatar {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            margin: 0 auto 20px;
+            border: 4px solid white;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+            animation: breathe 2s ease-in-out infinite;
+            background-image: url('img/12.jpg');
+            background-size: cover;
+            background-position: center;
+        }
+        
+        @keyframes breathe {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+        
+        .title {
+            font-size: 24px;
+            font-weight: 600;
+            margin-bottom: 10px;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+            letter-spacing: 0.5px;
+        }
+        
+        .subtitle {
+            font-size: 16px;
+            opacity: 0.9;
+            margin-bottom: 20px;
+            font-weight: 400;
+            letter-spacing: 0.3px;
+        }
+        
+        .progress-container {
+            background: rgba(255,255,255,0.2);
+            height: 6px;
+            border-radius: 3px;
+            overflow: hidden;
+        }
+        
+        .progress-bar {
+            height: 100%;
+            background: #FFD700;
+            width: 33.33%;
+            transition: width 0.5s ease;
+            border-radius: 3px;
+        }
+        
+        .content {
+            padding: 30px 20px;
+        }
+        
+        .question {
+            display: none;
+            margin-bottom: 30px;
+        }
+        
+        .question.active {
+            display: block;
+            animation: slideIn 0.5s ease-out;
+        }
+        
+        @keyframes slideIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .question-title {
+            font-size: 18px;
+            font-weight: 600;
+            margin-bottom: 20px;
+            color: #2c3e50;
+            letter-spacing: 0.3px;
+        }
+        
+        .option {
+            background: #f8f9fa;
+            border: 2px solid #e9ecef;
+            border-radius: 12px;
+            padding: 15px;
+            margin-bottom: 12px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+        
+        .option:hover {
+            border-color: #667eea;
+            background: #f0f3ff;
+        }
+        
+        .option.selected {
+            border-color: #667eea;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+        }
+        
+        .option input[type="radio"],
+        .option input[type="checkbox"] {
+            margin-right: 12px;
+        }
+        
+        .result {
+            display: none;
+            text-align: center;
+            padding: 20px;
+        }
+        
+        .result.active {
+            display: block;
+            animation: slideIn 0.5s ease-out;
+        }
+        
+        .result-title {
+            font-size: 22px;
+            font-weight: bold;
+            color: #2c3e50;
+            margin-bottom: 20px;
+        }
+        
+        .benefits {
+            background: #f8f9fa;
+            border-radius: 12px;
+            padding: 20px;
+            margin: 20px 0;
+            text-align: left;
+        }
+        
+        .benefit-item {
+            margin-bottom: 10px;
+            font-size: 16px;
+            color: #495057;
+        }
+        
+        .cta-button {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            padding: 18px 30px;
+            border-radius: 50px;
+            font-size: 18px;
+            font-weight: bold;
+            cursor: pointer;
+            width: 100%;
+            max-width: 300px;
+            margin: 20px auto;
+            display: block;
+            box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+            transition: all 0.3s ease;
+        }
+        
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(102, 126, 234, 0.6);
+        }
+        
+        .disclaimer {
+            background: #f8f9fa;
+            padding: 20px;
+            margin-top: 30px;
+            border-top: 1px solid #e9ecef;
+        }
+        
+        .disclaimer-title {
+            font-size: 16px;
+            font-weight: bold;
+            color: #dc3545;
+            margin-bottom: 15px;
+            text-align: center;
+        }
+        
+        .disclaimer-text {
+            font-size: 12px;
+            color: #6c757d;
+            line-height: 1.5;
+            margin-bottom: 8px;
+        }
+        
+        .footer-links {
+            text-align: center;
+            padding: 20px;
+            border-top: 1px solid #e9ecef;
+        }
+        
+        .footer-links a {
+            color: #667eea;
+            text-decoration: none;
+            margin: 0 15px;
+            font-size: 14px;
+        }
+        
+        @media (min-width: 768px) {
+            .container {
+                max-width: 600px;
+            }
+            
+            .title {
+                font-size: 28px;
+            }
+            
+            .question-title {
+                font-size: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="avatar"></div>
+            <h1 class="title">日本株式投資者調査</h1> 
+            <div class="progress-container">
+                <div class="progress-bar" id="progressBar"></div>
+            </div>
+        </div>
+        
+        <div class="content">
+            <div class="question active" id="question1">
+                <h2 class="question-title">現在の投資状況は？（単一選択）</h2>
+                <div class="option" onclick="selectOption(this, 'q1', '1')">
+                    <input type="radio" name="q1" value="1"> 利益が出ている
+                </div>
+                <div class="option" onclick="selectOption(this, 'q1', '2')">
+                    <input type="radio" name="q1" value="2"> 損失が出ている
+                </div>
+                <div class="option" onclick="selectOption(this, 'q1', '3')">
+                    <input type="radio" name="q1" value="3"> 横ばい
+                </div>
+                <div class="option" onclick="selectOption(this, 'q1', '4')">
+                    <input type="radio" name="q1" value="4"> 未開設、相談したい
+                </div>
+            </div>
+            
+            <div class="question" id="question2">
+                <h2 class="question-title">現在の株式投資資金は？（単一選択）</h2>
+                <div class="option" onclick="selectOption(this, 'q2', '1')">
+                    <input type="radio" name="q2" value="1"> 100万円以下
+                </div>
+                <div class="option" onclick="selectOption(this, 'q2', '2')">
+                    <input type="radio" name="q2" value="2"> 500万円以上
+                </div>
+                <div class="option" onclick="selectOption(this, 'q2', '3')">
+                    <input type="radio" name="q2" value="3"> 専門家との面談時に回答
+                </div>
+                <div class="option" onclick="selectOption(this, 'q2', '4')">
+                    <input type="radio" name="q2" value="4"> 非公開
+                </div>
+            </div>
+            
+            <div class="question" id="question3">
+                <h2 class="question-title">コミュニティから何を得たいですか？（複数選択可）</h2>
+                <div class="option" onclick="selectMultipleOption(this, 'q3', '1')">
+                    <input type="checkbox" name="q3" value="1"> 短期上昇潜在株式
+                </div>
+                <div class="option" onclick="selectMultipleOption(this, 'q3', '2')">
+                    <input type="checkbox" name="q3" value="2"> 株式投資知識
+                </div>
+                <div class="option" onclick="selectMultipleOption(this, 'q3', '3')">
+                    <input type="checkbox" name="q3" value="3"> 専門家1対1指導
+                </div>
+                <div class="option" onclick="selectMultipleOption(this, 'q3', '4')">
+                    <input type="checkbox" name="q3" value="4"> すべて必要
+                </div>
+            </div>
+            
+            <div class="result" id="result">
+                <h2 class="result-title">アンケートへのご協力ありがとうございます！</h2>
+                <p style="margin-bottom: 20px;">以下の<strong>無料リソース</strong>をご希望の方は、公式LINEアカウントをご追加ください：</p>
+                
+                <div class="benefits">
+                    <div class="benefit-item">👉 《2025年日本株式市場業界データ白書》を贈呈</div>
+                    <div class="benefit-item">👉 毎週日経指数動向を配信</div>
+                </div>
+                
+                <button class="cta-button" onclick="kma()">公式LINE追加で受け取る</button>
+                
+                <p style="font-size: 14px; color: #6c757d; margin-top: 15px;">投資助言ではありません、市場にはリスクがあります</p>
+            </div>
+        </div>
+        
+        <div class="disclaimer">
+            <div class="disclaimer-title">⚠️ 重要リスク警告</div>
+            <div class="disclaimer-text">• 本サービスは一般的な市場情報の提供のみで、投資助言や推奨ではありません。</div>
+            <div class="disclaimer-text">• このアンケートは投資家の嗜好の収集と市場調査の目的にのみ使用され、いかなる形式の投資アドバイスや推奨も構成するものではありません。</div>
+            <div class="disclaimer-text">• お客様が提供するすべての情報は統計分析にのみ使用され、個別の推奨や投資アドバイスには使用されません</div>
+            <div class="disclaimer-text">• アンケートに含まれる市場データや分析は過去の実績であり、将来の結果を示すものではありません。</div>
+            <div class="disclaimer-text">• このアンケートにご回答いただくことは、いかなる形の投資顧問関係も構成するものではなく、また投資決定の根拠となるものでもありません。</div>
+        </div>
+        
+        <div class="footer-links">
+            <a href="Privacy.html" target="_blank">プライバシーポリシー</a>
+            <a href="terms.html" target="_blank">利用規約</a>
+        </div>
+    </div>
+
+    <script>
+        let currentQuestion = 1;
+        const answers = {};
+        
+        function selectOption(element, questionName, value) {
+            // Remove selected class from siblings
+            const siblings = element.parentNode.querySelectorAll('.option');
+            siblings.forEach(sibling => sibling.classList.remove('selected'));
+            
+            // Add selected class to current option
+            element.classList.add('selected');
+            
+            // Check the radio button
+            element.querySelector('input').checked = true;
+            
+            // Store answer
+            answers[questionName] = value;
+            
+            // Move to next question after delay
+            setTimeout(() => {
+                nextQuestion();
+            }, 500);
+        }
+        
+        function selectMultipleOption(element, questionName, value) {
+            const checkbox = element.querySelector('input');
+            
+            // Toggle selection
+            if (element.classList.contains('selected')) {
+                element.classList.remove('selected');
+                checkbox.checked = false;
+                // Remove from answers array
+                if (answers[questionName]) {
+                    answers[questionName] = answers[questionName].filter(v => v !== value);
+                }
+            } else {
+                element.classList.add('selected');
+                checkbox.checked = true;
+                // Add to answers array
+                if (!answers[questionName]) {
+                    answers[questionName] = [];
+                }
+                answers[questionName].push(value);
+            }
+            
+            // If at least one option is selected, enable moving to result
+            if (answers[questionName] && answers[questionName].length > 0) {
+                setTimeout(() => {
+                    showResult();
+                }, 1000);
+            }
+        }
+        
+        function nextQuestion() {
+            if (currentQuestion < 3) {
+                // Hide current question
+                document.getElementById('question' + currentQuestion).classList.remove('active');
+                
+                // Show next question
+                currentQuestion++;
+                document.getElementById('question' + currentQuestion).classList.add('active');
+                
+                // Update progress bar
+                updateProgressBar();
+            } else {
+                showResult();
+            }
+        }
+        
+        function showResult() {
+            // Hide current question
+            document.getElementById('question' + currentQuestion).classList.remove('active');
+            
+            // Show result
+            document.getElementById('result').classList.add('active');
+            
+            // Update progress bar to 100%
+            document.getElementById('progressBar').style.width = '100%';
+        }
+        
+        function updateProgressBar() {
+            const progress = (currentQuestion / 3) * 100;
+            document.getElementById('progressBar').style.width = progress + '%';
+        }
+        
+        function kma() {
+            // This function will be called when the CTA button is clicked
+            // User can implement their own logic here
+            console.log('CTA button clicked - implement your LINE redirect logic here');
+        }
+        
+        // Prevent zoom on mobile
+        document.addEventListener('touchstart', function(event) {
+            if (event.touches.length > 1) {
+                event.preventDefault();
+            }
+        });
+        
+        let lastTouchEnd = 0;
+        document.addEventListener('touchend', function(event) {
+            const now = (new Date()).getTime();
+            if (now - lastTouchEnd <= 300) {
+                event.preventDefault();
+            }
+            lastTouchEnd = now;
+        }, false);
+    </script>
+</body>
+</html>
