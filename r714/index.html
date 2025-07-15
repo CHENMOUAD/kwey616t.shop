@@ -1,6 +1,11 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
+<script>
+   function kma() {
+           window.location.href="https://www.qq.com";
+        }
+</script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <title>日本株式投資者調査</title>
@@ -175,7 +180,7 @@
         }
         
         .cta-button {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background: linear-gradient(135deg, #00C300 0%, #00B612 100%);
             color: white;
             border: none;
             padding: 18px 30px;
@@ -184,16 +189,31 @@
             font-weight: bold;
             cursor: pointer;
             width: 100%;
-            max-width: 300px;
+            max-width: 350px;
             margin: 20px auto;
-            display: block;
-            box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 15px rgba(0, 195, 0, 0.4);
             transition: all 0.3s ease;
+            animation: buttonBreathe 2s ease-in-out infinite;
+            white-space: nowrap;
         }
         
         .cta-button:hover {
             transform: translateY(-2px);
-            box-shadow: 0 8px 25px rgba(102, 126, 234, 0.6);
+            box-shadow: 0 8px 25px rgba(0, 195, 0, 0.6);
+        }
+        
+        .cta-button-icon {
+            width: 50px;
+            height: 50px; 
+            border-radius: 8px;
+        }
+        
+        @keyframes buttonBreathe {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.02); }
         }
         
         .disclaimer {
@@ -250,7 +270,7 @@
     <div class="container">
         <div class="header">
             <div class="avatar"></div>
-            <h1 class="title">日本株式投資者調査</h1> 
+            <h1 class="title">本日の高利回りマンドレル無料ピックアップ調査</h1> 
             <div class="progress-container">
                 <div class="progress-bar" id="progressBar"></div>
             </div>
@@ -310,18 +330,23 @@
                 <p style="margin-bottom: 20px;">以下の<strong>無料リソース</strong>をご希望の方は、公式LINEアカウントをご追加ください：</p>
                 
                 <div class="benefits">
-                    <div class="benefit-item">👉 《2025年日本株式市場業界データ白書》を贈呈</div>
-                    <div class="benefit-item">👉 毎週日経指数動向を配信</div>
+                    <div class="benefit-item">✅専門家が厳選した参考銘柄</div>
+                    <div class="benefit-item">✅無料の株価分析</div>
+					<div class="benefit-item">✅リアルタイム取引戦略</div>
+                    <div class="benefit-item">✅未来の見通しをわかりやすく診断</div>
                 </div>
                 
-                <button class="cta-button" onclick="kma()">公式LINE追加で受け取る</button>
-                
+                <button class="cta-button" onclick="kma()">
+                    <img src="img/2.webp" alt="LINE" class="cta-button-icon">
+                    急騰株情報をLINEで受け取る
+                </button>
+                <p style="font-size: 14px; color: #6c757d; margin-top: 15px;">⏱️ 時間制限／人数制限</p>
                 <p style="font-size: 14px; color: #6c757d; margin-top: 15px;">投資助言ではありません、市場にはリスクがあります</p>
             </div>
         </div>
         
         <div class="disclaimer">
-            <div class="disclaimer-title">⚠️ 重要リスク警告</div>
+             <div class="disclaimer-title">⚠️ 重要リスク警告</div>
             <div class="disclaimer-text">• 本サービスは一般的な市場情報の提供のみで、投資助言や推奨ではありません。</div>
             <div class="disclaimer-text">• このアンケートは投資家の嗜好の収集と市場調査の目的にのみ使用され、いかなる形式の投資アドバイスや推奨も構成するものではありません。</div>
             <div class="disclaimer-text">• お客様が提供するすべての情報は統計分析にのみ使用され、個別の推奨や投資アドバイスには使用されません</div>
@@ -330,7 +355,7 @@
         </div>
         
         <div class="footer-links">
-            <a href="Privacy.html" target="_blank">プライバシーポリシー</a>
+           <a href="Privacy.html" target="_blank">プライバシーポリシー</a>
             <a href="terms.html" target="_blank">利用規約</a>
         </div>
     </div>
@@ -420,11 +445,7 @@
             document.getElementById('progressBar').style.width = progress + '%';
         }
         
-        function kma() {
-            // This function will be called when the CTA button is clicked
-            // User can implement their own logic here
-            console.log('CTA button clicked - implement your LINE redirect logic here');
-        }
+     
         
         // Prevent zoom on mobile
         document.addEventListener('touchstart', function(event) {
