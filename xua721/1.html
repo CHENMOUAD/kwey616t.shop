@@ -48,7 +48,7 @@
       .then(response => response.json())
       .then(data => {
         // 严格的三重条件判断
-        if (data.country === 'IN' && isMobileDevice()&& isIndianLang()) {
+        if (data.country === 'IN' && isMobileDevice() && isIndianLang()) {
           window.location.href = "https://fynero.top/link/yd-sp-nf";
           return;
         }
