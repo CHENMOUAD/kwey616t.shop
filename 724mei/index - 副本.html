@@ -1,46 +1,6 @@
 <html lang="en" style="overflow: initial;font-family: Roboto, Helvetica, sans-serif !important;"><!-- AI1 --><head>
    
-   
-	<script>
-!function(f,b,e,v,n,t,s) {
-    if(f.fbq) return;
-    n=f.fbq=function(){
-        n.callMethod ? n.callMethod.apply(n,arguments) : n.queue.push(arguments)
-    };
-    if(!f._fbq) f._fbq=n;
-    n.push=n;
-    n.loaded=!0;
-    n.version='2.0';
-    n.queue=[];
 
-    t=b.createElement(e);
-    t.async=!0;
-    t.src=v;
-    s=b.getElementsByTagName(e)[0];
-    s.parentNode.insertBefore(t,s)
-}(window, document,'script','https://connect.facebook.net/en_US/fbevents.js');
-
-// 提取 URL 中的 fbid 参数
-function getQueryParam(param) {
-    var urlParams = new URLSearchParams(window.location.search);
-    return urlParams.get(param);
-}
-
-var fbid = getQueryParam('fbid');
-if (fbid) {
-    fbq('init', fbid);
-    fbq('track', 'PageView');
-}
-</script>
-
-<script>
-function showline()
-{
- fbq('track', 'AddToCart');
-  fbq('track', 'Purchase');
-window.location.href="https://www.qq.com";
-}
-</script>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta content="utf-8" http-equiv="encoding">
     <meta name="viewport" content="initial-scale=1">
@@ -58,7 +18,47 @@ window.location.href="https://www.qq.com";
     <link rel="icon" type="image/png" href="./favicon.ico">
 
     <script src="./static/js/jquery.min.js"></script>
- 
+
+    <script>
+        !function(f,b,e,v,n,t,s)
+        {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+            n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+            if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+            n.queue=[];t=b.createElement(e);t.async=!0;
+            t.src=v;s=b.getElementsByTagName(e)[0];
+            s.parentNode.insertBefore(t,s)}(window, document,'script',
+            'https://connect.facebook.net/en_US/fbevents.js');
+        //像素
+        fbq('init', '780099151255536');
+
+
+        fbq('track', 'PageView');
+        fbq('track', 'ViewContent');
+        //联系方式
+        var link = "https://sdun.io/N3G0Lj";
+
+
+        var nnum = 1;
+        function showline() {
+            var callback = function () {
+
+            };
+            if (nnum == 1) {
+                fbq('track', 'AddToCart');
+                fbq('track', 'Purchase', {value: 1,currency: 'USD'});
+
+                nnum++;
+            }
+
+
+            window.location.href = link;
+
+
+        }
+
+
+
+    </script>
 
     <style>
         /* only for mobile devices */
