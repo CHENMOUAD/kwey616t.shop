@@ -1,0 +1,766 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>UM Company - Opportunité de Travail à Temps Partiel</title>
+    <style>
+        :root {
+            --primary-gradient: linear-gradient(135deg, #1e3a8a 0%, #1e40af 100%);
+            --secondary-gradient: linear-gradient(135deg, #fbbf24 0%, #f59e0b 100%);
+            --accent-gradient: linear-gradient(135deg, #1e40af 0%, #3b82f6 100%);
+            --success-gradient: linear-gradient(135deg, #fbbf24 0%, #f59e0b 100%);
+            --deep-blue: #1e3a8a;
+            --light-blue: #3b82f6;
+            --yellow: #fbbf24;
+            --dark-yellow: #f59e0b;
+            --text-primary: #1e3a8a;
+            --text-secondary: #64748b;
+            --bg-light: #ffffff;
+            --bg-dark: #f8fafc;
+            --shadow-primary: 0 10px 30px rgba(30, 58, 138, 0.1);
+            --shadow-hover: 0 20px 40px rgba(30, 58, 138, 0.15);
+            --border-radius-sm: 8px;
+            --border-radius-md: 16px;
+            --border-radius-lg: 24px;
+            --transition-primary: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            --transition-bounce: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .foundation-typography {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--text-primary);
+        }
+
+        .layout-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .section-spacing {
+            padding: 60px 0;
+        }
+
+        .hero-section {
+            background: var(--primary-gradient);
+            color: white;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="25" cy="25" r="1" fill="white" opacity="0.1"/><circle cx="75" cy="75" r="1" fill="white" opacity="0.1"/><circle cx="50" cy="10" r="1" fill="white" opacity="0.1"/><circle cx="10" cy="50" r="1" fill="white" opacity="0.1"/><circle cx="90" cy="30" r="1" fill="white" opacity="0.1"/></pattern></defs><rect width="100" height="100" fill="url(%23grain)"/></svg>');
+        }
+
+        .typography-hero-title {
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            font-weight: 800;
+            margin-bottom: 20px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .typography-hero-subtitle {
+            font-size: clamp(1.2rem, 2.5vw, 1.5rem);
+            margin-bottom: 30px;
+            opacity: 0.9;
+            position: relative;
+            z-index: 1;
+        }
+
+        .component-button-primary {
+            background: var(--secondary-gradient);
+            border: none;
+            padding: 16px 32px;
+            border-radius: var(--border-radius-md);
+            color: white;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition-bounce);
+            box-shadow: var(--shadow-primary);
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+        }
+
+        .component-button-primary::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+            transition: left 0.6s;
+        }
+
+        .component-button-primary:hover::before {
+            left: 100%;
+        }
+
+        .component-button-primary:hover {
+            transform: translateY(-3px) scale(1.05);
+            box-shadow: var(--shadow-hover);
+        }
+
+        .content-section {
+            background: var(--bg-light);
+        }
+
+        .content-section:nth-child(even) {
+            background: var(--bg-dark);
+        }
+
+        .component-feature-card {
+            background: white;
+            padding: 40px;
+            border-radius: var(--border-radius-lg);
+            box-shadow: var(--shadow-primary);
+            margin-bottom: 30px;
+            transition: var(--transition-primary);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .component-feature-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background: var(--accent-gradient);
+        }
+
+        .component-feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-hover);
+        }
+
+        .typography-section-title {
+            font-size: clamp(2rem, 4vw, 3rem);
+            text-align: center;
+            margin-bottom: 50px;
+            background: var(--primary-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            font-weight: 700;
+        }
+
+        .typography-card-title {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            color: var(--text-primary);
+            font-weight: 600;
+        }
+
+        .typography-body-text {
+            color: var(--text-primary);
+            line-height: 1.7;
+            margin-bottom: 15px;
+            font-weight: 500;
+        }
+
+        .component-image-container {
+            text-align: center;
+            margin: 40px 0;
+        }
+
+        .component-image-responsive {
+            max-width: 100%;
+            height: auto;
+            border-radius: var(--border-radius-md);
+            box-shadow: var(--shadow-primary);
+            transition: var(--transition-primary);
+        }
+
+        .component-image-responsive:hover {
+            transform: scale(1.02);
+            box-shadow: var(--shadow-hover);
+        }
+
+        .component-cta-section {
+            background: var(--accent-gradient);
+            color: white;
+            text-align: center;
+            position: relative;
+        }
+
+        .animation-breathing {
+            animation: breathe 2s ease-in-out infinite;
+        }
+
+        @keyframes breathe {
+            0%, 100% { transform: scale(1); opacity: 1; }
+            50% { transform: scale(1.05); opacity: 0.8; }
+        }
+
+        .component-whatsapp-float {
+            position: fixed;
+            right: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            z-index: 1000;
+            background: #25d366;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: var(--shadow-primary);
+            cursor: pointer;
+            transition: var(--transition-bounce);
+        }
+
+        .component-whatsapp-float:hover {
+            transform: translateY(-50%) scale(1.1);
+            box-shadow: var(--shadow-hover);
+        }
+
+        .component-notification-badge {
+            position: absolute;
+            top: -5px;
+            right: -5px;
+            background: #ff4757;
+            color: white;
+            border-radius: 50%;
+            width: 20px;
+            height: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 12px;
+            font-weight: bold;
+        }
+
+        .component-bottom-cta {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: var(--primary-gradient);
+            padding: 15px 20px;
+            z-index: 999;
+            box-shadow: 0 -5px 20px rgba(0,0,0,0.1);
+        }
+
+        .component-bottom-button {
+            width: 100%;
+            background: transparent;
+            border: 2px solid white;
+            color: white;
+            padding: 15px;
+            border-radius: var(--border-radius-md);
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition-primary);
+        }
+
+        .component-bottom-button:hover {
+            background: white;
+            color: var(--text-primary);
+        }
+
+        .layout-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .component-disclaimer {
+            background: #fff3cd;
+            border: 1px solid #ffeaa7;
+            padding: 20px;
+            border-radius: var(--border-radius-sm);
+            margin: 40px 0;
+        }
+
+        .typography-disclaimer {
+            color: #856404;
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+
+        .component-footer {
+            background: var(--text-primary);
+            color: white;
+            text-align: center;
+            padding: 40px 0;
+        }
+
+        .component-footer-links {
+            margin-top: 20px;
+        }
+
+        .component-footer-link {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+            opacity: 0.8;
+            transition: var(--transition-primary);
+        }
+
+        .component-footer-link:hover {
+            opacity: 1;
+            text-decoration: underline;
+        }
+
+        .utility-highlight {
+            background: var(--secondary-gradient);
+            color: white;
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-weight: 600;
+        }
+
+        .component-countdown-container {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: var(--border-radius-lg);
+            padding: 30px;
+            margin: 30px 0;
+            position: relative;
+            z-index: 1;
+        }
+
+        .component-urgency-badge {
+            background: var(--secondary-gradient);
+            color: var(--deep-blue);
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-weight: 700;
+            font-size: 0.9rem;
+            display: inline-block;
+            margin-bottom: 20px;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+
+        .component-countdown-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 15px;
+            max-width: 400px;
+            margin: 0 auto;
+        }
+
+        @media (max-width: 480px) {
+            .component-countdown-grid {
+                grid-template-columns: repeat(4, 1fr);
+                gap: 8px;
+                max-width: 100%;
+            }
+            
+            .component-countdown-item {
+                padding: 10px 5px;
+            }
+            
+            .component-countdown-number {
+                font-size: 1.5rem;
+            }
+            
+            .component-countdown-label {
+                font-size: 0.7rem;
+            }
+        }
+
+        .component-countdown-item {
+            background: white;
+            color: var(--deep-blue);
+            padding: 15px 10px;
+            border-radius: var(--border-radius-md);
+            text-align: center;
+            box-shadow: var(--shadow-primary);
+        }
+
+        .component-countdown-number {
+            font-size: 2rem;
+            font-weight: 800;
+            display: block;
+            color: var(--deep-blue);
+        }
+
+        .component-countdown-label {
+            font-size: 0.8rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            opacity: 0.8;
+        }
+
+        .utility-text-center {
+            text-align: center;
+        }
+
+        .utility-margin-bottom {
+            margin-bottom: 20px;
+        }
+
+        @media (max-width: 768px) {
+            .layout-container {
+                padding: 0 15px;
+            }
+            
+            .section-spacing {
+                padding: 40px 0;
+            }
+            
+            .component-feature-card {
+                padding: 25px;
+            }
+            
+            .component-whatsapp-float {
+                width: 50px;
+                height: 50px;
+                right: 15px;
+            }
+            
+            .component-bottom-cta {
+                padding: 12px 15px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .typography-hero-title {
+                font-size: 2rem;
+            }
+            
+            .typography-section-title {
+                font-size: 1.8rem;
+            }
+            
+            .component-feature-card {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body class="foundation-typography">
+    <!-- Section Héro -->
+    <section class="hero-section section-spacing">
+        <div class="layout-container">
+            <div class="component-urgency-badge">🔥 Seulement 30 Places Restantes !</div>
+            <h1 class="typography-hero-title">Valorisez Votre Temps - Seulement 1 Heure par Jour !</h1>
+            <p class="typography-hero-subtitle">Commencez Votre Voyage vers la Liberté Financière Aujourd'hui !</p>
+            
+            <div class="component-countdown-container">
+                <h3 style="margin-bottom: 20px; font-size: 1.5rem;">⏰ L'Offre à Durée Limitée se Termine Dans :</h3>
+                <div class="component-countdown-grid">
+                    <div class="component-countdown-item">
+                        <span class="component-countdown-number" id="days">00</span>
+                        <span class="component-countdown-label">Jours</span>
+                    </div>
+                    <div class="component-countdown-item">
+                        <span class="component-countdown-number" id="hours">00</span>
+                        <span class="component-countdown-label">Heures</span>
+                    </div>
+                    <div class="component-countdown-item">
+                        <span class="component-countdown-number" id="minutes">00</span>
+                        <span class="component-countdown-label">Minutes</span>
+                    </div>
+                    <div class="component-countdown-item">
+                        <span class="component-countdown-number" id="seconds">00</span>
+                        <span class="component-countdown-label">Secondes</span>
+                    </div>
+                </div>
+            </div>
+            
+            <button class="component-button-primary animation-breathing" onclick="k2()">Commencez Votre Parcours de Gains Potentiels</button>
+        </div>
+    </section>
+
+    <!-- Section Introduction -->
+    <section class="content-section section-spacing">
+        <div class="layout-container">
+            <h2 class="typography-section-title">Une Opportunité à Temps Partiel "Sans Vente, Sans Promotion" !</h2>
+            <div class="component-feature-card">
+                <p class="typography-body-text">Cela semble incroyable ? C'est exactement le nouveau modèle de travail à temps partiel en ligne que UM Company vous propose ! Avec juste un smartphone ou un ordinateur, effectuez des opérations simples du bout des doigts et gagnez de l'argent facilement à la maison.</p>
+                <div class="component-image-container">
+                    <img src="img/1.jpg" alt="Opportunité de travail à temps partiel" class="component-image-responsive">
+                </div>
+                <div class="utility-text-center">
+                    <button class="component-button-primary" onclick="k2()">Commencez Votre Parcours de Gains Potentiels</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Ce qui Rend ce Travail Différent -->
+    <section class="content-section section-spacing">
+        <div class="layout-container">
+            <h2 class="typography-section-title">Pourquoi Ce Travail Est-il Différent ?</h2>
+            <div class="component-feature-card">
+                <p class="typography-body-text">Votre travail ne consiste pas à vendre des produits ou à promouvoir des publicités, mais à aider nos supermarchés partenaires à augmenter la popularité de leurs produits.</p>
+                <p class="typography-body-text">En termes simples : suivez les instructions, cliquez sur les liens, ajoutez des produits au panier, <span class="utility-highlight">aucun achat requis, aucun frais</span>.</p>
+            </div>
+            
+            <div class="component-feature-card">
+                <h3 class="typography-card-title">Pas de Piège, Juste des Opérations Simples</h3>
+                <p class="typography-body-text">Aucune compétence professionnelle requise, aucun temps nécessaire pour apprendre des processus complexes. Si vous savez utiliser un smartphone ou un ordinateur, vous pouvez le gérer.</p>
+                <div class="component-image-container">
+                    <img src="img/2.jpg" alt="Opérations simples" class="component-image-responsive">
+                </div>
+                <div class="utility-text-center">
+                    <button class="component-button-primary" onclick="k2()">Laissez le Temps Créer de la Valeur Pour Vous</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pourquoi Essayer ce Travail -->
+    <section class="content-section section-spacing">
+        <div class="layout-container">
+            <h2 class="typography-section-title">Pourquoi Ce Travail Vaut-il la Peine d'Être Essayé ?</h2>
+            <div class="layout-grid">
+                <div class="component-feature-card">
+                    <h3 class="typography-card-title">1. Seulement 1 Heure par Jour, Gagnez Jusqu'à 300€ !</h3>
+                    <p class="typography-body-text">Les emplois à temps partiel traditionnels nécessitent de longues heures, mais chez UM Company, nous croyons que l'efficacité est la clé. Utilisez votre temps libre pour gagner facilement des retours généreux.</p>
+                </div>
+                
+                <div class="component-feature-card">
+                    <h3 class="typography-card-title">2. Paiement Instantané, Pas d'Attente !</h3>
+                    <p class="typography-body-text">Lorsque votre commission atteint 6€, nous transférons immédiatement sur votre compte via virement bancaire. Cela signifie que vous pouvez récupérer votre paiement à tout moment, pas besoin d'attendre la fin du mois.</p>
+                </div>
+                
+                <div class="component-feature-card">
+                    <h3 class="typography-card-title">3. Aucun Investissement Requis, Zéro Risque !</h3>
+                    <p class="typography-body-text">Aucun dépôt nécessaire, aucun achat de produit requis, aucun investissement initial. Il suffit de suivre les instructions pour accomplir les tâches et gagner de vraies commissions.</p>
+                </div>
+                
+                <div class="component-feature-card">
+                    <h3 class="typography-card-title">4. Liberté Flexible, Travaillez N'importe Quand, N'importe Où !</h3>
+                    <p class="typography-body-text">Que vous soyez une maman à plein temps, un étudiant, ou quelqu'un voulant gagner un revenu supplémentaire pendant le temps libre, ce travail s'adapte parfaitement à votre emploi du temps quotidien.</p>
+                </div>
+            </div>
+            
+            <div class="component-image-container">
+                <img src="img/3.jpg" alt="Travail flexible" class="component-image-responsive">
+            </div>
+            <div class="utility-text-center utility-margin-bottom">
+                <button class="component-button-primary" onclick="k2()">Apprenez Comment Augmenter Vos Revenus</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Comment Ça Marche -->
+    <section class="content-section section-spacing">
+        <div class="layout-container">
+            <h2 class="typography-section-title">Comment Ça Marche ?</h2>
+            <div class="layout-grid">
+                <div class="component-feature-card">
+                    <h3 class="typography-card-title">Connexion à la Plateforme de Tâches</h3>
+                    <p class="typography-body-text">Nous vous fournirons une plateforme de tâches exclusive où les instructions des tâches sont claires en un coup d'œil.</p>
+                </div>
+                
+                <div class="component-feature-card">
+                    <h3 class="typography-card-title">Effectuer des Opérations Simples</h3>
+                    <p class="typography-body-text">Suivez les instructions, ajoutez les produits spécifiés au panier, aucun achat de produit nécessaire, aucun frais engagé.</p>
+                </div>
+                
+                <div class="component-feature-card">
+                    <h3 class="typography-card-title">Collecter la Commission</h3>
+                    <p class="typography-body-text">Pour chaque tâche accomplie, la commission est créditée sur votre compte en temps réel. Lorsque le solde atteint 6€, le retrait automatique est disponible.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Notre Promesse -->
+    <section class="content-section section-spacing">
+        <div class="layout-container">
+            <h2 class="typography-section-title">Notre Promesse</h2>
+            <div class="component-feature-card">
+                <div class="layout-grid">
+                    <div>
+                        <h3 class="typography-card-title">Aucun Frais Caché</h3>
+                        <p class="typography-body-text">De l'inscription à l'accomplissement des tâches, vous ne payez rien.</p>
+                    </div>
+                    <div>
+                        <h3 class="typography-card-title">Conformité Légale</h3>
+                        <p class="typography-body-text">Toutes les opérations d'UM Company sont conformes aux lois et réglementations pertinentes, garantissant vos droits.</p>
+                    </div>
+                    <div>
+                        <h3 class="typography-card-title">Sécurité des Données</h3>
+                        <p class="typography-body-text">Vos informations personnelles sont strictement protégées, utilisées uniquement pour le règlement des tâches.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="component-feature-card">
+                <h3 class="typography-card-title">Pourquoi Ce Travail à Temps Partiel Existe-t-il ?</h3>
+                <p class="typography-body-text">C'est parce que nous sommes différents des emplois à temps partiel traditionnels ! Les supermarchés traditionnels ont besoin de dépenser de l'argent en publicités pour obtenir du trafic, mais notre modèle est plus efficace : grâce au comportement d'opération d'utilisateurs réels, aidant les produits à obtenir plus de recommandations et d'exposition sur la plateforme. Vous êtes une partie importante de ce processus, et nous sommes prêts à payer une compensation raisonnable pour votre temps.</p>
+                <div class="component-image-container">
+                    <img src="img/4.jpg" alt="Comment ça fonctionne" class="component-image-responsive">
+                </div>
+                <div class="utility-text-center">
+                    <button class="component-button-primary" onclick="k2()">Apprenez Comment Augmenter Vos Revenus</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Appel à l'Action Final -->
+    <section class="component-cta-section section-spacing">
+        <div class="layout-container">
+            <h2 class="typography-hero-title" style="margin-bottom: 20px;">Rejoignez UM Company Maintenant, Commencez Votre Parcours à Temps Partiel Facile !</h2>
+            <p class="typography-hero-subtitle">Cliquez sur le bouton ci-dessous pour vous inscrire immédiatement et obtenir votre compte de plateforme de tâches exclusif !</p>
+            <button class="component-button-primary animation-breathing" onclick="k2()">Commencez Maintenant</button>
+        </div>
+    </section>
+
+    <!-- Clause de Non-Responsabilité -->
+    <section class="content-section">
+        <div class="layout-container">
+            <div class="component-disclaimer">
+                <p class="typography-disclaimer"><strong>⚠️ Avis de Risque Important et Clause de Non-Responsabilité</strong></p>
+                <p class="typography-disclaimer"><strong>Opportunité de Travail à Temps Partiel :</strong> Cette opportunité à temps partiel implique la réalisation de tâches et un revenu à la commission. Bien que nous proposions des opportunités de travail légitimes, les revenus réels peuvent varier considérablement en fonction des efforts individuels, de la disponibilité des tâches et des conditions du marché.</p>
+                <p class="typography-disclaimer"><strong>Aucune garantie d'emploi :</strong> Il s'agit d'une opportunité de travail indépendant, et non d'un emploi traditionnel. Nous ne garantissons pas d'horaires minimum, de disponibilité stable ni de revenus fixes. Les participants sont libres de travailler à leur rythme et à leurs horaires.</p>
+                <p class="typography-disclaimer"><strong>Conformité réglementaire :</strong>  Ce service est conforme à la réglementation du travail applicable au travail indépendant. Cependant, la réglementation peut varier selon la juridiction. Il est de la responsabilité des participants de comprendre leurs obligations fiscales locales.</p>
+                <p class="typography-disclaimer"><strong>Exigences relatives à la performance des tâches :</strong>  Les revenus sont directement liés à la réussite de la tâche. Le non-respect des instructions, l'exécution correcte des tâches ou le non-respect des normes de qualité peuvent entraîner une réduction ou une absence de rémunération pour une tâche spécifique.</p>
+                <p class="typography-disclaimer"><strong>Dépendance à la plateforme : </strong>Cette opportunité dépend de notre plateforme partenaire et de ses besoins continus en services d'interaction avec les utilisateurs. Toute modification des exigences des partenaires ou des politiques de la plateforme peut affecter la disponibilité des tâches et le potentiel de rémunération..</p>
+                <p class="typography-disclaimer"><strong>Données et confidentialité : </strong>En participant, vous consentez à partager les informations nécessaires avec notre plateforme et les détaillants partenaires pour mener à bien la tâche. Tout traitement des données est conforme aux lois applicables en matière de confidentialit</p>
+				  <p class="typography-disclaimer"><strong>Critères d’âge et d’éligibilité : </strong> Les participants doivent être âgés de 23 ans ou plus (ou avoir l’âge légal pour travailler dans leur juridiction) et être légalement autorisés à travailler en tant qu’entrepreneur indépendant dans leur région.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pied de Page -->
+    <footer class="component-footer">
+        <div class="layout-container">
+            <p>&copy; 2024 UM Company. Tous droits réservés.</p>
+            <p style="margin-top: 10px; font-size: 0.9rem; opacity: 0.8;">UM Company - Solutions de Travail à Temps Partiel Professionnelles | Entité Commerciale Enregistrée</p> 
+            <p style="margin-top: 5px; font-size: 0.8rem; opacity: 0.7;">Conforme aux Réglementations de l'Emploi UE et aux Lois de Protection des Données (GDPR)</p>
+            <p style="margin-top: 5px; font-size: 0.8rem; opacity: 0.7;">Fournisseur de Services d'Emploi à Temps Partiel Agréé | Protection du Consommateur Certifiée</p>
+            <div class="component-footer-links">
+                <a href="#" class="component-footer-link">Politique de Confidentialité</a>
+                <a href="#" class="component-footer-link">Conditions de Service</a>
+                <a href="#" class="component-footer-link">Conditions d'Emploi</a>
+                <a href="#" class="component-footer-link">Protection des Données</a>
+                <a href="#" class="component-footer-link">Droits du Consommateur</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bouton Flottant WhatsApp -->
+    <div class="component-whatsapp-float animation-breathing" onclick="k2()">
+        <svg width="30" height="30" fill="white" viewBox="0 0 24 24">
+            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893A11.821 11.821 0 0020.893 3.386"/>
+        </svg>
+        <div class="component-notification-badge animation-breathing">1</div>
+    </div>
+
+    <!-- Appel à l'Action Fixe en Bas -->
+    <div class="component-bottom-cta">
+        <button class="component-bottom-button animation-breathing" onclick="k2()">Rejoignez UM Company - Commencez à Gagner Aujourd'hui !</button>
+    </div>
+
+    <script>
+        function k2() {
+            window.open('https://wa.me/1234567890', '_blank');
+        }
+
+        // Ajouter des animations interactives
+        document.addEventListener('DOMContentLoaded', function() {
+            // Défilement fluide pour une meilleure UX
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    document.querySelector(this.getAttribute('href')).scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                });
+            });
+
+            // Ajouter un effet parallaxe à la section héro
+            window.addEventListener('scroll', function() {
+                const scrolled = window.pageYOffset;
+                const hero = document.querySelector('.hero-section');
+                if (hero) {
+                    hero.style.transform = `translateY(${scrolled * 0.5}px)`;
+                }
+            });
+
+            // Ajouter une animation décalée aux cartes de fonctionnalités
+            const cards = document.querySelectorAll('.component-feature-card');
+            cards.forEach((card, index) => {
+                card.style.animationDelay = `${index * 0.1}s`;
+                card.classList.add('fadeInUp');
+            });
+        });
+
+        // Minuteur de Compte à Rebours
+        function startCountdown() {
+            // Définir le compte à rebours pour 2 jours à partir de maintenant
+            const countdownDate = new Date().getTime() + (2 * 24 * 60 * 60 * 1000);
+            
+            function updateCountdown() {
+                const now = new Date().getTime();
+                const distance = countdownDate - now;
+                
+                const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+                const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+                const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+                
+                document.getElementById('days').textContent = days.toString().padStart(2, '0');
+                document.getElementById('hours').textContent = hours.toString().padStart(2, '0');
+                document.getElementById('minutes').textContent = minutes.toString().padStart(2, '0');
+                document.getElementById('seconds').textContent = seconds.toString().padStart(2, '0');
+                
+                if (distance < 0) {
+                    clearInterval(timer);
+                    document.getElementById('days').textContent = '00';
+                    document.getElementById('hours').textContent = '00';
+                    document.getElementById('minutes').textContent = '00';
+                    document.getElementById('seconds').textContent = '00';
+                }
+            }
+            
+            updateCountdown();
+            const timer = setInterval(updateCountdown, 1000);
+        }
+        
+        startCountdown();
+
+        // Ajouter des classes d'animation CSS
+        const style = document.createElement('style');
+        style.textContent = `
+            .fadeInUp {
+                animation: fadeInUp 0.6s ease-out forwards;
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            
+            @keyframes fadeInUp {
+                to {
+                    opacity: 1;
+                    transform: translateY(0);
+                }
+            }
+        `;
+        document.head.appendChild(style);
+    </script>
+</body>
+</html>
