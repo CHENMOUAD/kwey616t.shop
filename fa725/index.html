@@ -11,6 +11,25 @@
   gtag('config', 'AW-10976436384');
 </script>
 
+	<!-- Event snippet for 7.25 联系 conversion page
+In your html page, add the snippet and call gtag_report_conversion when someone clicks on the chosen link or button. -->
+<script>
+function gtag_report_conversion(url) {
+  var callback = function () {
+    if (typeof(url) != 'undefined') {
+      window.location = url;
+    }
+  };
+  gtag('event', 'conversion', {
+      'send_to': 'AW-10976436384/Gm5RCJWJsfgaEKDB_PEo',
+      'value': 1.0,
+      'currency': 'USD',
+      'event_callback': callback
+  });
+  return false;
+}
+</script>
+
 	
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -689,7 +708,7 @@
 
     <script>
         function k2() {
-            window.open('https://wa.me/1234567890', '_blank');
+		gtag_report_conversion('https://wa.me/1234567890'); 
         }
 
         // Ajouter des animations interactives
