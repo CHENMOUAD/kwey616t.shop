@@ -1,0 +1,857 @@
+<!DOCTYPE html>
+<html lang="fr" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, maximum-scale=1.0, minimum-scale=1.0">
+    <title>Conditions d'Utilisation - Birdeye Company</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'primary-accent': '#FF6B35',
+                        'secondary-accent': '#004E89',
+                        'tertiary-accent': '#1A1A2E',
+                        'success-bright': '#00C851',
+                        'warning-vibrant': '#FFBB33',
+                        'purple-dynamic': '#7B68EE'
+                    },
+                    fontFamily: {
+                        'display-modern': ['Inter', 'system-ui', 'sans-serif'],
+                        'body-readable': ['Roboto', 'Arial', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .section-highlight {
+            background: linear-gradient(135deg, rgba(255, 107, 53, 0.05), rgba(0, 78, 137, 0.05));
+            border-left: 4px solid #FF6B35;
+            padding: 1.5rem;
+            border-radius: 0.5rem;
+            margin-bottom: 2rem;
+        }
+        
+        .terms-header {
+            background: linear-gradient(135deg, #1A1A2E 0%, #16213E 50%, #0F3460 100%);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .terms-header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at 30% 40%, rgba(255, 107, 53, 0.2) 0%, transparent 50%),
+                        radial-gradient(circle at 80% 20%, rgba(123, 104, 238, 0.2) 0%, transparent 50%);
+        }
+        
+        .table-container {
+            overflow-x: auto;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            border-radius: 0.5rem;
+        }
+        
+        .footer-section {
+            background: #1A1A2E;
+            color: white;
+            padding: 2rem 0;
+        }
+        
+        .clause-box {
+            border: 1px solid #e5e7eb;
+            border-radius: 0.5rem;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            background: white;
+            transition: all 0.3s ease;
+        }
+        
+        .clause-box:hover {
+            border-color: #FF6B35;
+            box-shadow: 0 4px 12px rgba(255, 107, 53, 0.1);
+        }
+        
+        @media (max-width: 768px) {
+            .section-highlight {
+                padding: 1rem;
+                margin-bottom: 1.5rem;
+            }
+            
+            .clause-box {
+                padding: 1rem;
+                margin-bottom: 1rem;
+            }
+        }
+    </style>
+</head>
+<body class="font-body-readable bg-gray-50">
+    <!-- Header -->
+    <header class="terms-header text-white py-16 px-4 relative z-10">
+        <div class="max-w-4xl mx-auto text-center">
+            <div class="flex items-center justify-center mb-6">
+                <div class="w-16 h-16 bg-gradient-to-r from-primary-accent to-secondary-accent rounded-full flex items-center justify-center mr-4">
+                    <i class="fas fa-eye text-white text-2xl"></i>
+                </div>
+                <h1 class="font-display-modern text-4xl md:text-5xl font-bold">Birdeye Company</h1>
+            </div>
+            <h2 class="text-2xl md:text-3xl font-semibold mb-4">Conditions d'Utilisation</h2>
+            <p class="text-lg text-gray-200 max-w-2xl mx-auto">
+                Termes et conditions régissant l'utilisation de notre programme d'emploi à temps partiel
+            </p>
+            <div class="mt-6 text-sm text-gray-300">
+                <p><i class="fas fa-calendar-alt mr-2"></i>Dernière mise à jour : 15 décembre 2024</p>
+                <p><i class="fas fa-clock mr-2"></i>Effectif à partir du : 15 décembre 2024</p>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="max-w-4xl mx-auto px-4 py-12">
+        <!-- Introduction -->
+        <section class="section-highlight">
+            <h3 class="text-2xl font-bold text-tertiary-accent mb-4">
+                <i class="fas fa-info-circle text-primary-accent mr-3"></i>Acceptation des Conditions
+            </h3>
+            <p class="text-gray-700 leading-relaxed mb-4">
+                En vous inscrivant et en utilisant les services de <strong>Birdeye Company SAS</strong> (ci-après "la Société", "nous", "notre"), 
+                vous acceptez d'être lié par les présentes Conditions d'Utilisation (ci-après "les Conditions").
+            </p>
+            <p class="text-gray-700 leading-relaxed mb-4">
+                Si vous n'acceptez pas ces conditions dans leur intégralité, vous ne devez pas utiliser nos services.
+            </p>
+            <div class="bg-yellow-50 border-l-4 border-yellow-400 p-4 mt-4">
+                <p class="text-yellow-800 font-semibold">
+                    <i class="fas fa-exclamation-triangle mr-2"></i>
+                    L'utilisation continue de nos services après toute modification de ces conditions constitue votre acceptation des nouvelles conditions.
+                </p>
+            </div>
+        </section>
+ 
+
+        <!-- Service Description -->
+        <section class="section-highlight">
+            <h3 class="text-2xl font-bold text-tertiary-accent mb-4">
+                <i class="fas fa-briefcase text-success-bright mr-3"></i>Description du Service
+            </h3>
+            
+            <div class="space-y-4">
+                <div class="clause-box">
+                    <h4 class="text-xl font-semibold text-gray-800 mb-3">1.1 Nature du Service</h4>
+                    <p class="text-gray-700 leading-relaxed mb-3">
+                        Birdeye Company propose un programme d'emploi à temps partiel en ligne consistant à :
+                    </p>
+                    <ul class="list-disc list-inside text-gray-700 space-y-2 ml-4">
+                        <li>Effectuer des tâches simples sur des plateformes e-commerce partenaires</li>
+                        <li>Ajouter des produits spécifiés dans des paniers d'achat (sans obligation d'achat)</li>
+                        <li>Contribuer à l'augmentation de la visibilité et du référencement des produits</li>
+                        <li>Recevoir des commissions pour les tâches accomplies avec succès</li>
+                    </ul>
+                </div>
+
+                <div class="clause-box">
+                    <h4 class="text-xl font-semibold text-gray-800 mb-3">1.2 Plateforme Technologique</h4>
+                    <p class="text-gray-700 leading-relaxed">
+                        Nous fournissons une plateforme web dédiée permettant aux utilisateurs d'accéder aux tâches disponibles, 
+                        de suivre leurs performances et de gérer leurs gains. L'accès se fait via compte utilisateur sécurisé.
+                    </p>
+                </div>
+
+                <div class="clause-box">
+                    <h4 class="text-xl font-semibold text-gray-800 mb-3">1.3 Partenariats Commerciaux</h4>
+                    <p class="text-gray-700 leading-relaxed">
+                        Notre service repose sur des partenariats avec des retailers et plateformes e-commerce légitimes. 
+                        Les tâches proposées respectent les conditions d'utilisation de ces plateformes partenaires.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- User Eligibility -->
+        <section class="bg-white rounded-lg shadow-lg p-6 mb-8">
+            <h3 class="text-2xl font-bold text-tertiary-accent mb-4">
+                <i class="fas fa-user-check text-warning-vibrant mr-3"></i>Éligibilité et Inscription
+            </h3>
+            
+            <div class="space-y-4">
+                <div class="clause-box border-l-4 border-red-500">
+                    <h4 class="text-xl font-semibold text-red-700 mb-3">2.1 Conditions d'Âge et de Capacité</h4>
+                    <ul class="text-gray-700 space-y-2">
+                        <li class="flex items-start">
+                            <i class="fas fa-exclamation-circle text-red-500 mr-2 mt-1"></i>
+                            <span><strong>Âge minimum requis :</strong> 18 ans révolus</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-balance-scale text-red-500 mr-2 mt-1"></i>
+                            <span><strong>Capacité juridique :</strong> Être capable de contracter légalement</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-globe text-red-500 mr-2 mt-1"></i>
+                            <span><strong>Résidence :</strong> Résider dans un pays où le service est légalement disponible</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-file-alt text-red-500 mr-2 mt-1"></i>
+                            <span><strong>Documents :</strong> Fournir une pièce d'identité valide si demandée</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="clause-box border-l-4 border-blue-500">
+                    <h4 class="text-xl font-semibold text-blue-700 mb-3">2.2 Processus d'Inscription</h4>
+                    <div class="grid md:grid-cols-2 gap-4">
+                        <div>
+                            <h5 class="font-semibold text-gray-800 mb-2">Informations Requises</h5>
+                            <ul class="text-sm text-gray-700 space-y-1">
+                                <li>• Nom complet et prénom</li>
+                                <li>• Adresse email valide</li>
+                                <li>• Numéro de téléphone</li>
+                                <li>• Adresse postale complète</li>
+                                <li>• Coordonnées bancaires (IBAN)</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h5 class="font-semibold text-gray-800 mb-2">Vérifications</h5>
+                            <ul class="text-sm text-gray-700 space-y-1">
+                                <li>• Validation de l'adresse email</li>
+                                <li>• Vérification du numéro de téléphone</li>
+                                <li>• Contrôle d'identité (si nécessaire)</li>
+                                <li>• Validation des coordonnées bancaires</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="clause-box border-l-4 border-green-500">
+                    <h4 class="text-xl font-semibold text-green-700 mb-3">2.3 Unicité du Compte</h4>
+                    <p class="text-gray-700 leading-relaxed">
+                        Chaque utilisateur ne peut créer qu'un seul compte. La création de comptes multiples est strictement interdite 
+                        et entraînera la suspension immédiate de tous les comptes associés à la même personne.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- User Obligations -->
+        <section class="section-highlight">
+            <h3 class="text-2xl font-bold text-tertiary-accent mb-4">
+                <i class="fas fa-tasks text-purple-dynamic mr-3"></i>Obligations de l'Utilisateur
+            </h3>
+            
+            <div class="space-y-4">
+                <div class="clause-box">
+                    <h4 class="text-xl font-semibold text-gray-800 mb-3">3.1 Utilisation Appropriée</h4>
+                    <div class="grid md:grid-cols-2 gap-4">
+                        <div class="bg-green-50 p-4 rounded border-l-4 border-green-500">
+                            <h5 class="font-semibold text-green-800 mb-2">✅ Comportements Autorisés</h5>
+                            <ul class="text-sm text-green-700 space-y-1">
+                                <li>• Suivre exactement les instructions données</li>
+                                <li>• Effectuer les tâches pendant les heures spécifiées</li>
+                                <li>• Maintenir la confidentialité des informations</li>
+                                <li>• Signaler les problèmes techniques</li>
+                                <li>• Respecter les délais impartis</li>
+                            </ul>
+                        </div>
+                        <div class="bg-red-50 p-4 rounded border-l-4 border-red-500">
+                            <h5 class="font-semibold text-red-800 mb-2">❌ Comportements Interdits</h5>
+                            <ul class="text-sm text-red-700 space-y-1">
+                                <li>• Utiliser des bots ou scripts automatisés</li>
+                                <li>• Partager ses identifiants de connexion</li>
+                                <li>• Effectuer des achats réels non autorisés</li>
+                                <li>• Tenter de contourner le système</li>
+                                <li>• Créer de faux comptes</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="clause-box">
+                    <h4 class="text-xl font-semibold text-gray-800 mb-3">3.2 Sécurité du Compte</h4>
+                    <ul class="text-gray-700 space-y-2">
+                        <li class="flex items-start">
+                            <i class="fas fa-lock text-secondary-accent mr-2 mt-1"></i>
+                            <span>Maintenir la confidentialité de vos identifiants de connexion</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-shield-alt text-secondary-accent mr-2 mt-1"></i>
+                            <span>Utiliser un mot de passe fort et unique</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-bell text-secondary-accent mr-2 mt-1"></i>
+                            <span>Signaler immédiatement toute utilisation non autorisée</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-sync text-secondary-accent mr-2 mt-1"></i>
+                            <span>Maintenir vos informations de contact à jour</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="clause-box">
+                    <h4 class="text-xl font-semibold text-gray-800 mb-3">3.3 Déclarations et Garanties</h4>
+                    <p class="text-gray-700 leading-relaxed mb-3">En utilisant nos services, vous déclarez et garantissez que :</p>
+                    <ul class="list-disc list-inside text-gray-700 space-y-2 ml-4">
+                        <li>Toutes les informations fournies sont exactes et complètes</li>
+                        <li>Vous avez la capacité légale de participer à ce programme</li>
+                        <li>Votre participation ne viole aucune loi applicable</li>
+                        <li>Vous ne participez à aucun programme concurrent similaire</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Payment Terms -->
+        <section class="bg-white rounded-lg shadow-lg p-6 mb-8">
+            <h3 class="text-2xl font-bold text-tertiary-accent mb-4">
+                <i class="fas fa-euro-sign text-success-bright mr-3"></i>Conditions de Paiement
+            </h3>
+            
+            <div class="space-y-4">
+                <div class="clause-box border-l-4 border-success-bright">
+                    <h4 class="text-xl font-semibold text-success-bright mb-3">4.1 Structure de Rémunération</h4>
+                    <div class="table-container">
+                        <table class="w-full bg-white border-collapse">
+                            <thead class="bg-gray-100">
+                                <tr>
+                                    <th class="border border-gray-300 px-4 py-3 text-left font-semibold">Type de Tâche</th>
+                                    <th class="border border-gray-300 px-4 py-3 text-left font-semibold">Commission</th>
+                                    <th class="border border-gray-300 px-4 py-3 text-left font-semibold">Temps Estimé</th>
+                                    <th class="border border-gray-300 px-4 py-3 text-left font-semibold">Niveau Requis</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="border border-gray-300 px-4 py-3">Tâche Simple</td>
+                                    <td class="border border-gray-300 px-4 py-3">0,50€ - 2€</td>
+                                    <td class="border border-gray-300 px-4 py-3">2-5 minutes</td>
+                                    <td class="border border-gray-300 px-4 py-3">Débutant</td>
+                                </tr>
+                                <tr class="bg-gray-50">
+                                    <td class="border border-gray-300 px-4 py-3">Tâche Intermédiaire</td>
+                                    <td class="border border-gray-300 px-4 py-3">2€ - 5€</td>
+                                    <td class="border border-gray-300 px-4 py-3">5-10 minutes</td>
+                                    <td class="border border-gray-300 px-4 py-3">Expérimenté</td>
+                                </tr>
+                                <tr>
+                                    <td class="border border-gray-300 px-4 py-3">Tâche Complexe</td>
+                                    <td class="border border-gray-300 px-4 py-3">5€ - 15€</td>
+                                    <td class="border border-gray-300 px-4 py-3">10-20 minutes</td>
+                                    <td class="border border-gray-300 px-4 py-3">Expert</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <div class="clause-box border-l-4 border-warning-vibrant">
+                    <h4 class="text-xl font-semibold text-warning-vibrant mb-3">4.2 Modalités de Paiement</h4>
+                    <div class="grid md:grid-cols-2 gap-4">
+                        <div>
+                            <h5 class="font-semibold text-gray-800 mb-2">Seuil de Paiement</h5>
+                            <ul class="text-gray-700 space-y-1 text-sm">
+                                <li>• <strong>Minimum :</strong> 6,00€</li>
+                                <li>• <strong>Calcul :</strong> En temps réel</li>
+                                <li>• <strong>Déclenchement :</strong> Automatique</li>
+                                <li>• <strong>Fréquence :</strong> Illimitée</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h5 class="font-semibold text-gray-800 mb-2">Délais de Traitement</h5>
+                            <ul class="text-gray-700 space-y-1 text-sm">
+                                <li>• <strong>Virement SEPA :</strong> 1-3 jours ouvrés</li>
+                                <li>• <strong>Validation :</strong> Immédiate</li>
+                                <li>• <strong>Notification :</strong> Email automatique</li>
+                                <li>• <strong>Historique :</strong> Disponible en ligne</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="clause-box border-l-4 border-red-500">
+                    <h4 class="text-xl font-semibold text-red-700 mb-3">4.3 Avertissements Importants</h4>
+                    <div class="bg-red-50 p-4 rounded">
+                        <ul class="text-red-700 space-y-2">
+                            <li class="flex items-start">
+                                <i class="fas fa-exclamation-triangle mr-2 mt-1"></i>
+                                <span><strong>Revenus variables :</strong> Les commissions dépendent de la disponibilité des tâches et de votre performance</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-ban mr-2 mt-1"></i>
+                                <span><strong>Aucune garantie :</strong> Aucun revenu minimum n'est garanti</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-calculator mr-2 mt-1"></i>
+                                <span><strong>Fiscalité :</strong> Les revenus peuvent être soumis à déclaration fiscale selon votre situation</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Intellectual Property -->
+        <section class="section-highlight">
+            <h3 class="text-2xl font-bold text-tertiary-accent mb-4">
+                <i class="fas fa-copyright text-secondary-accent mr-3"></i>Propriété Intellectuelle
+            </h3>
+            
+            <div class="space-y-4">
+                <div class="clause-box">
+                    <h4 class="text-xl font-semibold text-gray-800 mb-3">5.1 Droits de Birdeye Company</h4>
+                    <p class="text-gray-700 leading-relaxed mb-3">
+                        Tous les droits de propriété intellectuelle relatifs au service, y compris mais sans s'y limiter :
+                    </p>
+                    <ul class="list-disc list-inside text-gray-700 space-y-2 ml-4">
+                        <li>La plateforme web et son interface utilisateur</li>
+                        <li>Les algorithmes et méthodes de traitement</li>
+                        <li>Les marques, logos et éléments graphiques</li>
+                        <li>La documentation et les guides d'utilisation</li>
+                        <li>Les bases de données et leur structure</li>
+                    </ul>
+                </div>
+
+                <div class="clause-box">
+                    <h4 class="text-xl font-semibold text-gray-800 mb-3">5.2 Licence d'Utilisation</h4>
+                    <p class="text-gray-700 leading-relaxed">
+                        Nous vous accordons une licence limitée, non exclusive, non cessible et révocable d'utiliser notre plateforme 
+                        uniquement dans le cadre du programme d'emploi à temps partiel et conformément aux présentes conditions.
+                    </p>
+                </div>
+
+                <div class="clause-box">
+                    <h4 class="text-xl font-semibold text-gray-800 mb-3">5.3 Restrictions d'Usage</h4>
+                    <div class="bg-red-50 border border-red-200 rounded p-4">
+                        <p class="text-red-800 font-semibold mb-2">Il est strictement interdit de :</p>
+                        <ul class="text-red-700 space-y-1 text-sm">
+                            <li>• Reproduire, copier ou distribuer tout contenu de la plateforme</li>
+                            <li>• Reverse-engineer ou tenter d'accéder au code source</li>
+                            <li>• Utiliser nos marques ou logos sans autorisation écrite</li>
+                            <li>• Créer des œuvres dérivées basées sur notre service</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Liability Limitations -->
+        <section class="bg-white rounded-lg shadow-lg p-6 mb-8">
+            <h3 class="text-2xl font-bold text-tertiary-accent mb-4">
+                <i class="fas fa-balance-scale text-warning-vibrant mr-3"></i>Limitation de Responsabilité
+            </h3>
+            
+            <div class="space-y-4">
+                <div class="clause-box border-l-4 border-yellow-500">
+                    <h4 class="text-xl font-semibold text-yellow-700 mb-3">6.1 Disponibilité du Service</h4>
+                    <p class="text-gray-700 leading-relaxed mb-3">
+                        Bien que nous nous efforcions de maintenir la disponibilité continue de notre service, nous ne garantissons pas :
+                    </p>
+                    <ul class="text-gray-700 space-y-2">
+                        <li>• Un accès ininterrompu à la plateforme</li>
+                        <li>• La disponibilité constante de tâches</li>
+                        <li>• L'absence d'erreurs ou de bugs techniques</li>
+                        <li>• La compatibilité avec tous les appareils et navigateurs</li>
+                    </ul>
+                </div>
+
+                <div class="clause-box border-l-4 border-orange-500">
+                    <h4 class="text-xl font-semibold text-orange-700 mb-3">6.2 Limitation des Dommages</h4>
+                    <div class="bg-orange-50 p-4 rounded">
+                        <p class="text-orange-800 leading-relaxed">
+                            <strong>Notre responsabilité est limitée au montant total des commissions que vous avez reçues 
+                            au cours des 12 derniers mois précédant le préjudice allégué.</strong>
+                        </p>
+                        <p class="text-orange-700 text-sm mt-2">
+                            En aucun cas nous ne serons responsables des dommages indirects, consécutifs, 
+                            spéciaux ou punitifs, y compris la perte de profits ou d'opportunités.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="clause-box border-l-4 border-red-500">
+                    <h4 class="text-xl font-semibold text-red-700 mb-3">6.3 Exclusions de Garantie</h4>
+                    <p class="text-red-700 font-semibold mb-3">
+                        LE SERVICE EST FOURNI "TEL QUEL" ET "SELON DISPONIBILITÉ" SANS GARANTIES D'AUCUNE SORTE.
+                    </p>
+                    <p class="text-gray-700 text-sm">
+                        Nous déclinons expressément toute garantie explicite ou implicite, y compris les garanties 
+                        de qualité marchande, d'adéquation à un usage particulier et de non-violation.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Termination -->
+        <section class="section-highlight">
+            <h3 class="text-2xl font-bold text-tertiary-accent mb-4">
+                <i class="fas fa-door-open text-purple-dynamic mr-3"></i>Résiliation
+            </h3>
+            
+            <div class="space-y-4">
+                <div class="clause-box">
+                    <h4 class="text-xl font-semibold text-gray-800 mb-3">7.1 Résiliation par l'Utilisateur</h4>
+                    <div class="grid md:grid-cols-2 gap-4">
+                        <div>
+                            <h5 class="font-semibold text-gray-800 mb-2">Modalités</h5>
+                            <ul class="text-gray-700 space-y-1 text-sm">
+                                <li>• Préavis de 7 jours par email</li>
+                                <li>• Finalisation des tâches en cours</li>
+                                <li>• Paiement des commissions dues</li>
+                                <li>• Suppression du compte sous 30 jours</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h5 class="font-semibold text-gray-800 mb-2">Procédure</h5>
+                            <ul class="text-gray-700 space-y-1 text-sm">
+                                <li>• Email à: termination@birdeye-company.fr</li>
+                                <li>• Mention "Résiliation de compte"</li>
+                                <li>• Confirmation de réception sous 48h</li>
+                                <li>• Traitement sous 7 jours ouvrés</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="clause-box border-l-4 border-red-500">
+                    <h4 class="text-xl font-semibold text-red-700 mb-3">7.2 Résiliation par Birdeye Company</h4>
+                    <p class="text-gray-700 leading-relaxed mb-3">
+                        Nous nous réservons le droit de suspendre ou résilier votre compte immédiatement en cas de :
+                    </p>
+                    <ul class="text-red-700 space-y-2">
+                        <li class="flex items-start">
+                            <i class="fas fa-ban mr-2 mt-1"></i>
+                            <span>Violation des présentes conditions d'utilisation</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-robot mr-2 mt-1"></i>
+                            <span>Utilisation de bots ou d'automatisation non autorisée</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-user-times mr-2 mt-1"></i>
+                            <span>Création de comptes multiples</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-exclamation-circle mr-2 mt-1"></i>
+                            <span>Activité suspecte ou frauduleuse</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-gavel mr-2 mt-1"></i>
+                            <span>Non-respect des lois applicables</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="clause-box border-l-4 border-blue-500">
+                    <h4 class="text-xl font-semibold text-blue-700 mb-3">7.3 Effets de la Résiliation</h4>
+                    <div class="grid md:grid-cols-2 gap-4">
+                        <div class="bg-blue-50 p-4 rounded">
+                            <h5 class="font-semibold text-blue-800 mb-2">Arrêt Immédiat</h5>
+                            <ul class="text-blue-700 space-y-1 text-sm">
+                                <li>• Accès à la plateforme</li>
+                                <li>• Attribution de nouvelles tâches</li>
+                                <li>• Utilisation des services</li>
+                            </ul>
+                        </div>
+                        <div class="bg-green-50 p-4 rounded">
+                            <h5 class="font-semibold text-green-800 mb-2">Maintenu</h5>
+                            <ul class="text-green-700 space-y-1 text-sm">
+                                <li>• Paiement des commissions acquises</li>
+                                <li>• Obligations de confidentialité</li>
+                                <li>• Limitations de responsabilité</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Dispute Resolution -->
+        <section class="bg-white rounded-lg shadow-lg p-6 mb-8">
+            <h3 class="text-2xl font-bold text-tertiary-accent mb-4">
+                <i class="fas fa-gavel text-secondary-accent mr-3"></i>Résolution des Litiges
+            </h3>
+            
+            <div class="space-y-4">
+                <div class="clause-box border-l-4 border-blue-500">
+                    <h4 class="text-xl font-semibold text-blue-700 mb-3">8.1 Résolution Amiable</h4>
+                    <p class="text-gray-700 leading-relaxed mb-3">
+                        En cas de différend, nous encourageons une résolution amiable par le biais des étapes suivantes :
+                    </p>
+                    <div class="grid md:grid-cols-3 gap-4">
+                        <div class="text-center p-4 bg-blue-50 rounded">
+                            <div class="w-12 h-12 bg-blue-500 rounded-full flex items-center justify-center mx-auto mb-2">
+                                <span class="text-white font-bold">1</span>
+                            </div>
+                            <h5 class="font-semibold text-blue-800 mb-1">Contact Direct</h5>
+                            <p class="text-blue-700 text-sm">Email au service client dans les 30 jours</p>
+                        </div>
+                        <div class="text-center p-4 bg-blue-50 rounded">
+                            <div class="w-12 h-12 bg-blue-500 rounded-full flex items-center justify-center mx-auto mb-2">
+                                <span class="text-white font-bold">2</span>
+                            </div>
+                            <h5 class="font-semibold text-blue-800 mb-1">Négociation</h5>
+                            <p class="text-blue-700 text-sm">Discussion de bonne foi pendant 30 jours</p>
+                        </div>
+                        <div class="text-center p-4 bg-blue-50 rounded">
+                            <div class="w-12 h-12 bg-blue-500 rounded-full flex items-center justify-center mx-auto mb-2">
+                                <span class="text-white font-bold">3</span>
+                            </div>
+                            <h5 class="font-semibold text-blue-800 mb-1">Médiation</h5>
+                            <p class="text-blue-700 text-sm">Recours à un médiateur agréé si nécessaire</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="clause-box border-l-4 border-purple-500">
+                    <h4 class="text-xl font-semibold text-purple-700 mb-3">8.2 Juridiction Compétente</h4>
+                    <div class="bg-purple-50 p-4 rounded">
+                        <p class="text-purple-800 leading-relaxed">
+                            En cas d'échec de la résolution amiable, tout litige sera soumis à la compétence exclusive 
+                            des <strong>tribunaux de Paris, France</strong>, y compris pour les procédures d'urgence 
+                            ou les procédures conservatoires, même en cas de pluralité de défendeurs ou d'appel en garantie.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="clause-box border-l-4 border-green-500">
+                    <h4 class="text-xl font-semibold text-green-700 mb-3">8.3 Médiation de la Consommation</h4>
+                    <p class="text-gray-700 leading-relaxed mb-3">
+                        Conformément à la réglementation européenne, en cas de litige, vous pouvez recourir à la médiation :
+                    </p>
+                    <div class="bg-green-50 p-4 rounded">
+                        <p class="text-green-800 font-semibold">Médiateur de la Consommation</p>
+                        <p class="text-green-700 text-sm">
+                            Association des Médiateurs Européens (AME)<br>
+                            Email: mediation@mediateurs-europeens.org<br>
+                            Site: www.mediateurs-europeens.org
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Applicable Law -->
+        <section class="section-highlight">
+            <h3 class="text-2xl font-bold text-tertiary-accent mb-4">
+                <i class="fas fa-university text-success-bright mr-3"></i>Droit Applicable et Dispositions Générales
+            </h3>
+            
+            <div class="space-y-4">
+                <div class="clause-box">
+                    <h4 class="text-xl font-semibold text-gray-800 mb-3">9.1 Droit Applicable</h4>
+                    <p class="text-gray-700 leading-relaxed">
+                        Les présentes conditions d'utilisation sont régies par le <strong>droit français</strong>. 
+                        Toute question relative à l'interprétation ou à l'exécution de ces conditions sera 
+                        résolue conformément à la législation française en vigueur.
+                    </p>
+                </div>
+
+                <div class="clause-box">
+                    <h4 class="text-xl font-semibold text-gray-800 mb-3">9.2 Divisibilité</h4>
+                    <p class="text-gray-700 leading-relaxed">
+                        Si une disposition de ces conditions est déclarée invalide ou inapplicable par un tribunal compétent, 
+                        les autres dispositions demeureront pleinement en vigueur et l'effet du contrat dans son ensemble sera préservé.
+                    </p>
+                </div>
+
+                <div class="clause-box">
+                    <h4 class="text-xl font-semibold text-gray-800 mb-3">9.3 Intégralité de l'Accord</h4>
+                    <p class="text-gray-700 leading-relaxed">
+                        Ces conditions constituent l'intégralité de l'accord entre vous et Birdeye Company concernant 
+                        l'utilisation de nos services et remplacent tous accords antérieurs, qu'ils soient écrits ou oraux.
+                    </p>
+                </div>
+
+                <div class="clause-box">
+                    <h4 class="text-xl font-semibold text-gray-800 mb-3">9.4 Modification des Conditions</h4>
+                    <div class="bg-yellow-50 border border-yellow-200 rounded p-4">
+                        <p class="text-yellow-800 leading-relaxed">
+                            Nous nous réservons le droit de modifier ces conditions à tout moment. 
+                            Les modifications majeures seront notifiées par email avec un préavis de 30 jours. 
+                            La poursuite de l'utilisation après notification constitue votre acceptation des nouvelles conditions.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Information -->
+        <section class="bg-gradient-to-r from-primary-accent to-secondary-accent text-white rounded-lg p-6 mb-8">
+            <h3 class="text-2xl font-bold mb-4">
+                <i class="fas fa-headset mr-3"></i>Support et Contact
+            </h3>
+            
+            <div class="grid md:grid-cols-3 gap-6">
+                <div>
+                    <h4 class="font-semibold mb-2">
+                        <i class="fas fa-envelope mr-2"></i>Support Technique
+                    </h4>
+                    <div class="space-y-1 text-sm">
+                        <p>Email: support@birdeye-company.fr</p>
+                        <p>Téléphone: +33 1 23 45 67 89</p>
+                        <p>Horaires: Lun-Ven 9h-18h</p>
+                        <p>Temps de réponse: &lt; 24h</p>
+                    </div>
+                </div>
+
+                <div>
+                    <h4 class="font-semibold mb-2">
+                        <i class="fas fa-scale-balanced mr-2"></i>Questions Légales
+                    </h4>
+                    <div class="space-y-1 text-sm">
+                        <p>Email: legal@birdeye-company.fr</p>
+                        <p>Courrier: Service Juridique</p>
+                        <p>Birdeye Company SAS</p>
+                        <p>123 Rue de la Innovation</p>
+                        <p>75001 Paris, France</p>
+                    </div>
+                </div>
+
+                <div>
+                    <h4 class="font-semibold mb-2">
+                        <i class="fas fa-euro-sign mr-2"></i>Questions Financières
+                    </h4>
+                    <div class="space-y-1 text-sm">
+                        <p>Email: finance@birdeye-company.fr</p>
+                        <p>Paiements: payments@birdeye-company.fr</p>
+                        <p>Horaires: Lun-Ven 9h-17h</p>
+                        <p>Urgences: +33 1 23 45 67 90</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Version Information -->
+        <section class="bg-gray-100 rounded-lg p-4 text-center">
+            <p class="text-gray-600 text-sm">
+                <i class="fas fa-file-contract mr-2"></i>
+                <strong>Version des conditions :</strong> 3.1 | 
+                <strong>Date d'entrée en vigueur :</strong> 15 décembre 2024 | 
+                <strong>Prochaine révision prévue :</strong> 15 juin 2025
+            </p>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer-section">
+        <div class="max-w-4xl mx-auto px-4 text-center">
+            <div class="flex items-center justify-center mb-4">
+                <div class="w-10 h-10 bg-gradient-to-r from-primary-accent to-secondary-accent rounded-full flex items-center justify-center mr-3">
+                    <i class="fas fa-eye text-white text-lg"></i>
+                </div>
+                <span class="text-2xl font-bold text-white">Birdeye Company</span>
+            </div>
+            <div class="space-y-2 text-gray-400">
+                <p>&copy; 2024 Birdeye Company SAS. Tous droits réservés.</p>
+                <p class="text-sm">
+                    Ces conditions d'utilisation sont conformes au droit français et aux politiques de Google.
+                </p>
+                <div class="flex justify-center space-x-6 mt-4">
+                    <a href="#" class="text-gray-400 hover:text-white transition-colors">
+                        <i class="fas fa-home mr-1"></i>Accueil
+                    </a>
+                    <a href="" class="text-gray-400 hover:text-white transition-colors">
+                        <i class="fas fa-shield-alt mr-1"></i>Politique de confidentialité
+                    </a>
+                    <a href="#" class="text-gray-400 hover:text-white transition-colors">
+                        <i class="fas fa-cookie-bite mr-1"></i>Paramètres cookies
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Dark mode detection
+        if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+            document.documentElement.classList.add('dark');
+        }
+        
+        window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', event => {
+            if (event.matches) {
+                document.documentElement.classList.add('dark');
+            } else {
+                document.documentElement.classList.remove('dark');
+            }
+        });
+
+        // Smooth scroll for better UX
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Print functionality
+        function printTerms() {
+            window.print();
+        }
+
+        // Back to top functionality
+        function scrollToTop() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        }
+
+        // Show back to top button when scrolling
+        window.addEventListener('scroll', function() {
+            const backToTopBtn = document.getElementById('backToTop');
+            if (backToTopBtn) {
+                if (window.pageYOffset > 300) {
+                    backToTopBtn.style.display = 'block';
+                } else {
+                    backToTopBtn.style.display = 'none';
+                }
+            }
+        });
+
+        // Table of contents functionality
+        function generateTOC() {
+            const headings = document.querySelectorAll('h3, h4');
+            const toc = document.getElementById('tableOfContents');
+            if (toc && headings.length > 0) {
+                let tocHTML = '<h4 class="font-semibold mb-3">Table des Matières</h4><ul class="space-y-1 text-sm">';
+                
+                headings.forEach((heading, index) => {
+                    const id = `heading-${index}`;
+                    heading.id = id;
+                    const level = heading.tagName === 'H3' ? '' : 'ml-4';
+                    tocHTML += `<li class="${level}"><a href="#${id}" class="text-blue-600 hover:text-blue-800">${heading.textContent}</a></li>`;
+                });
+                
+                tocHTML += '</ul>';
+                toc.innerHTML = tocHTML;
+            }
+        }
+
+        // Generate table of contents on page load
+        document.addEventListener('DOMContentLoaded', generateTOC);
+    </script>
+
+    <!-- Back to Top Button -->
+    <button id="backToTop" onclick="scrollToTop()" 
+            class="fixed bottom-6 right-6 bg-primary-accent text-white p-3 rounded-full shadow-lg hover:bg-opacity-80 transition-all duration-300 z-50" 
+            style="display: none;">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <!-- Print Button -->
+    <button onclick="printTerms()" 
+            class="fixed bottom-6 left-6 bg-secondary-accent text-white p-3 rounded-full shadow-lg hover:bg-opacity-80 transition-all duration-300 z-50">
+        <i class="fas fa-print"></i>
+    </button>
+</body>
+</html>
