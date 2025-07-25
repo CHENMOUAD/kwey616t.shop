@@ -1,0 +1,722 @@
+<!DOCTYPE html>
+<html lang="fr" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, maximum-scale=1.0, minimum-scale=1.0">
+    <title>Opportunité d'Emploi à Temps Partiel - Birdeye Company</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'primary-accent': '#FF6B35',
+                        'secondary-accent': '#004E89',
+                        'tertiary-accent': '#1A1A2E',
+                        'success-bright': '#00C851',
+                        'warning-vibrant': '#FFBB33',
+                        'purple-dynamic': '#7B68EE',
+                        'gradient-start': '#FF6B35',
+                        'gradient-end': '#004E89'
+                    },
+                    fontFamily: {
+                        'display-modern': ['Inter', 'system-ui', 'sans-serif'],
+                        'body-readable': ['Roboto', 'Arial', 'sans-serif']
+                    },
+                    animation: {
+                        'breathing-pulse': 'breathe 2s ease-in-out infinite',
+                        'floating-motion': 'float 3s ease-in-out infinite',
+                        'gradient-shift': 'gradientShift 4s ease-in-out infinite',
+                        'bounce-custom': 'bounceCustom 1s infinite',
+                        'scale-pulse': 'scalePulse 2s infinite'
+                    },
+                    keyframes: {
+                        breathe: {
+                            '0%, 100%': { transform: 'scale(1)', opacity: '1' },
+                            '50%': { transform: 'scale(1.05)', opacity: '0.8' }
+                        },
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0px)' },
+                            '50%': { transform: 'translateY(-10px)' }
+                        },
+                        gradientShift: {
+                            '0%, 100%': { backgroundPosition: '0% 50%' },
+                            '50%': { backgroundPosition: '100% 50%' }
+                        },
+                        bounceCustom: {
+                            '0%, 20%, 50%, 80%, 100%': { transform: 'translateY(0)' },
+                            '40%': { transform: 'translateY(-10px)' },
+                            '60%': { transform: 'translateY(-5px)' }
+                        },
+                        scalePulse: {
+                            '0%, 100%': { transform: 'scale(1)' },
+                            '50%': { transform: 'scale(1.1)' }
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .dynamic-gradient-background {
+            background: linear-gradient(-45deg, #FF6B35, #004E89, #7B68EE, #00C851);
+            background-size: 400% 400%;
+            animation: gradientShift 6s ease infinite;
+        }
+        
+        .text-shadow-enhanced {
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+        
+        .glass-morphism-effect {
+            background: rgba(255, 255, 255, 0.25);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.18);
+        }
+        
+        .interactive-button-primary {
+            position: relative;
+            overflow: hidden;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        .interactive-button-primary::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            transition: left 0.5s;
+        }
+        
+        .interactive-button-primary:hover::before {
+            left: 100%;
+        }
+        
+        .interactive-button-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(255, 107, 53, 0.4);
+        }
+        
+        .whatsapp-notification-badge {
+            position: absolute;
+            top: -8px;
+            right: -8px;
+            background: #FF6B35;
+            color: white;
+            border-radius: 50%;
+            width: 20px;
+            height: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 12px;
+            font-weight: bold;
+            animation: breathing-pulse 2s infinite;
+        }
+        
+        .content-section-wrapper {
+            margin-bottom: 4rem;
+            padding: 2rem;
+            border-radius: 1rem;
+            transition: transform 0.3s ease;
+        }
+        
+        .content-section-wrapper:hover {
+            transform: translateY(-5px);
+        }
+        
+        .feature-highlight-card {
+            background: linear-gradient(135deg, rgba(255, 107, 53, 0.1), rgba(0, 78, 137, 0.1));
+            border-left: 4px solid #FF6B35;
+            padding: 1.5rem;
+            border-radius: 0.5rem;
+            margin-bottom: 1.5rem;
+            transition: all 0.3s ease;
+        }
+        
+        .feature-highlight-card:hover {
+            background: linear-gradient(135deg, rgba(255, 107, 53, 0.2), rgba(0, 78, 137, 0.2));
+            border-left-width: 6px;
+        }
+        
+        .floating-action-button {
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 1000;
+            width: 280px;
+            height: 60px;
+            background: linear-gradient(45deg, #FF6B35, #004E89);
+            border: none;
+            border-radius: 30px;
+            color: white;
+            font-size: 18px;
+            font-weight: bold;
+            cursor: pointer;
+            animation: breathing-pulse 3s infinite;
+            box-shadow: 0 6px 20px rgba(255, 107, 53, 0.4);
+            transition: all 0.3s ease;
+        }
+        
+        .floating-action-button:hover {
+            transform: translateX(-50%) translateY(-3px);
+            box-shadow: 0 10px 30px rgba(255, 107, 53, 0.6);
+        }
+        
+        .whatsapp-float-icon {
+            position: fixed;
+            top: 50%;
+            right: 20px;
+            transform: translateY(-50%);
+            background: #25D366;
+            border-radius: 50%;
+            width: 60px;
+            height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            z-index: 999;
+            animation: floating-motion 3s ease-in-out infinite;
+            box-shadow: 0 4px 15px rgba(37, 211, 102, 0.4);
+        }
+        
+        .hero-section-gradient {
+            background: linear-gradient(135deg, #1A1A2E 0%, #16213E 50%, #0F3460 100%);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero-section-gradient::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at 30% 40%, rgba(255, 107, 53, 0.2) 0%, transparent 50%),
+                        radial-gradient(circle at 80% 20%, rgba(123, 104, 238, 0.2) 0%, transparent 50%);
+        }
+        
+        .testimonial-card-container {
+            background: white;
+            padding: 2rem;
+            border-radius: 1rem;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .testimonial-card-container:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+        }
+        
+        .risk-disclosure-section {
+            background: linear-gradient(135deg, #FFF3E0, #FFECB3);
+            border: 2px solid #FFBB33;
+            border-radius: 1rem;
+            padding: 2rem;
+            margin: 2rem 0;
+        }
+        
+        .privacy-footer-links {
+            background: #1A1A2E;
+            color: white;
+            padding: 2rem 0;
+            text-align: center;
+        }
+        
+        @media (max-width: 768px) {
+            .floating-action-button {
+                width: 250px;
+                height: 55px;
+                font-size: 16px;
+            }
+            
+            .whatsapp-float-icon {
+                width: 50px;
+                height: 50px;
+                right: 15px;
+            }
+            
+            .content-section-wrapper {
+                padding: 1rem;
+                margin-bottom: 2rem;
+            }
+        }
+    </style>
+</head>
+<body class="font-body-readable bg-gray-50 overflow-x-hidden">
+    <!-- WhatsApp Float Icon -->
+    <div class="whatsapp-float-icon" onclick="k2()">
+        <i class="fab fa-whatsapp text-white text-2xl"></i>
+        <div class="whatsapp-notification-badge">1</div>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="hero-section-gradient text-white py-16 px-4 relative z-10">
+        <div class="max-w-6xl mx-auto text-center">
+            <h1 class="font-display-modern text-4xl md:text-6xl font-bold mb-6 text-shadow-enhanced animate-bounce-custom">
+                Seulement 1 heure par jour pour valoriser votre temps, commencez votre voyage vers la liberté financière
+            </h1>
+            <p class="text-xl md:text-2xl mb-8 text-gray-200 max-w-4xl mx-auto leading-relaxed">
+                Une opportunité d'emploi à temps partiel <span class="text-warning-vibrant font-bold">"sans vendre de produits, sans promotion"</span> 
+            </p>
+            <div class="glass-morphism-effect rounded-2xl p-6 mb-8 max-w-4xl mx-auto">
+                <p class="text-lg leading-relaxed">
+                    Cela semble incroyable ? Mais c'est exactement le nouveau modèle d'emploi à temps partiel en ligne que Birdeye Company vous apporte 
+                    Il vous suffit d'un téléphone ou d'un ordinateur, de bouger vos doigts pour effectuer des opérations simples, et vous pouvez facilement gagner de l'argent à la maison.
+                </p>
+            </div>
+            <img src="img/3.jpg" alt="Travail à domicile" class="mx-auto rounded-2xl shadow-2xl mb-8 max-w-full h-auto animate-floating-motion">
+            <button onclick="k2()" class="interactive-button-primary bg-gradient-to-r from-primary-accent to-secondary-accent text-white px-12 py-4 rounded-full text-xl font-bold animate-scale-pulse">
+                Commencez votre voyage de revenus potentiels
+            </button>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <div class="max-w-6xl mx-auto px-4 py-12">
+        <!-- Why Different Section -->
+        <section class="content-section-wrapper bg-white rounded-2xl shadow-lg">
+            <h2 class="font-display-modern text-3xl md:text-4xl font-bold text-tertiary-accent mb-8 text-center">
+                Pourquoi ce travail sera-t-il différent ?
+            </h2>
+            <div class="feature-highlight-card">
+                <p class="text-lg leading-relaxed text-gray-700">
+                    Votre travail n'est pas de vendre des produits ou de promouvoir des publicités, mais d'aider nos supermarchés partenaires à augmenter la popularité de leurs produits.
+                </p>
+            </div>
+            <div class="feature-highlight-card">
+                <p class="text-lg leading-relaxed text-gray-700">
+                    En termes simples : suivez les instructions, cliquez sur les liens, ajoutez les produits au panier, sans achat nécessaire, sans frais.
+                </p>
+            </div>
+        </section>
+
+        <!-- No Tricks Section -->
+        <section class="content-section-wrapper bg-gradient-to-br from-purple-50 to-blue-50 rounded-2xl">
+            <h2 class="font-display-modern text-3xl md:text-4xl font-bold text-purple-dynamic mb-8 text-center">
+                Pas de piège, seulement des opérations simples
+            </h2>
+            <p class="text-lg leading-relaxed text-gray-700 mb-8 text-center max-w-4xl mx-auto">
+                Aucune compétence professionnelle requise, pas besoin de passer du temps à apprendre des processus complexes. 
+                Si vous savez utiliser un téléphone ou un ordinateur, vous pouvez le faire.
+            </p>
+            <div class="text-center mb-8">
+                <img src="img/2.jpg" alt="Opérations simples" class="mx-auto rounded-2xl shadow-xl max-w-full h-auto">
+            </div>
+            <div class="text-center">
+                <button onclick="k2()" class="interactive-button-primary bg-gradient-to-r from-success-bright to-purple-dynamic text-white px-10 py-3 rounded-full text-lg font-bold">
+                    Laissez le temps créer de la valeur pour vous
+                </button>
+            </div>
+        </section>
+
+        <!-- Why Worth Trying Section -->
+        <section class="content-section-wrapper bg-white rounded-2xl shadow-lg">
+            <h2 class="font-display-modern text-3xl md:text-4xl font-bold text-tertiary-accent mb-12 text-center">
+                Pourquoi ce travail vaut-il la peine d'être essayé ?
+            </h2>
+            
+            <div class="grid md:grid-cols-2 gap-8">
+                <div class="testimonial-card-container">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 bg-primary-accent rounded-full flex items-center justify-center text-white font-bold text-xl mr-4">1</div>
+                        <h3 class="text-xl font-bold text-tertiary-accent">Seulement 1 heure par jour, revenus jusqu'à 300 euros !</h3>
+                    </div>
+                    <p class="text-gray-700 leading-relaxed">
+                        Les emplois à temps partiel traditionnels nécessitent beaucoup de temps, mais chez Birdeye Company, nous croyons que l'efficacité est la clé. 
+                        Utilisez votre temps libre pour gagner facilement de généreux retours.
+                    </p>
+                </div>
+
+                <div class="testimonial-card-container">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 bg-success-bright rounded-full flex items-center justify-center text-white font-bold text-xl mr-4">2</div>
+                        <h3 class="text-xl font-bold text-tertiary-accent">Gagnez et encaissez immédiatement, sans attendre le salaire !</h3>
+                    </div>
+                    <p class="text-gray-700 leading-relaxed">
+                        Chaque fois que votre commission atteint 6 euros, nous effectuons immédiatement un virement bancaire sur votre compte. 
+                        Cela signifie que vous pouvez retirer votre rémunération à tout moment, sans attendre la fin du mois.
+                    </p>
+                </div>
+
+                <div class="testimonial-card-container">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 bg-warning-vibrant rounded-full flex items-center justify-center text-white font-bold text-xl mr-4">3</div>
+                        <h3 class="text-xl font-bold text-tertiary-accent">Aucun investissement requis, zéro risque !</h3>
+                    </div>
+                    <p class="text-gray-700 leading-relaxed">
+                        Pas besoin de payer de caution, pas besoin d'acheter des produits, aucun investissement initial requis. 
+                        Il vous suffit de suivre les instructions pour accomplir les tâches et obtenir une vraie commission.
+                    </p>
+                </div>
+
+                <div class="testimonial-card-container">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 bg-purple-dynamic rounded-full flex items-center justify-center text-white font-bold text-xl mr-4">4</div>
+                        <h3 class="text-xl font-bold text-tertiary-accent">Flexible et libre, travaillez n'importe où, n'importe quand !</h3>
+                    </div>
+                    <p class="text-gray-700 leading-relaxed">
+                        Que vous soyez mère au foyer, étudiant, ou quelqu'un qui veut utiliser son temps libre pour gagner de l'argent supplémentaire, 
+                        ce travail s'adapte parfaitement à votre emploi du temps quotidien.
+                    </p>
+                </div>
+            </div>
+
+            <div class="text-center mt-12">
+                <img src="img/1.jpg" alt="Flexibilité de travail" class="mx-auto rounded-2xl shadow-xl mb-8 max-w-full h-auto">
+                <button onclick="k2()" class="interactive-button-primary bg-gradient-to-r from-primary-accent to-warning-vibrant text-white px-12 py-4 rounded-full text-xl font-bold">
+                    Découvrez comment augmenter vos revenus
+                </button>
+            </div>
+        </section>
+
+        <!-- How It Works Section -->
+        <section class="content-section-wrapper dynamic-gradient-background text-white rounded-2xl">
+            <h2 class="font-display-modern text-3xl md:text-4xl font-bold mb-12 text-center text-shadow-enhanced">
+                Comment cela fonctionne-t-il ?
+            </h2>
+            
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="glass-morphism-effect rounded-xl p-6 text-center">
+                    <div class="w-16 h-16 bg-white bg-opacity-20 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-sign-in-alt text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4">Connectez-vous à la plateforme de tâches</h3>
+                    <p class="leading-relaxed">
+                        Nous vous fournirons une plateforme de tâches exclusive, avec des instructions claires et faciles à comprendre.
+                    </p>
+                </div>
+
+                <div class="glass-morphism-effect rounded-xl p-6 text-center">
+                    <div class="w-16 h-16 bg-white bg-opacity-20 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-mouse-pointer text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4">Effectuez des opérations simples</h3>
+                    <p class="leading-relaxed">
+                        Suivez les instructions, ajoutez les produits spécifiés au panier, sans acheter de produits, sans frais.
+                    </p>
+                </div>
+
+                <div class="glass-morphism-effect rounded-xl p-6 text-center">
+                    <div class="w-16 h-16 bg-white bg-opacity-20 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-euro-sign text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4">Recevez votre commission</h3>
+                    <p class="leading-relaxed">
+                        Pour chaque tâche accomplie, la commission est créditée en temps réel sur votre compte. 
+                        Quand le solde atteint 6 euros, retrait automatique.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Our Promise Section -->
+        <section class="content-section-wrapper bg-gradient-to-br from-green-50 to-blue-50 rounded-2xl">
+            <h2 class="font-display-modern text-3xl md:text-4xl font-bold text-tertiary-accent mb-8 text-center">
+                Nos engagements
+            </h2>
+            
+            <div class="space-y-6">
+                <div class="feature-highlight-card bg-white">
+                    <h3 class="text-xl font-bold text-success-bright mb-3">
+                        <i class="fas fa-shield-alt mr-3"></i>Aucun frais caché
+                    </h3>
+                    <p class="text-gray-700">
+                        De l'inscription à l'achèvement des tâches, vous n'avez aucun frais à payer.
+                    </p>
+                </div>
+
+                <div class="feature-highlight-card bg-white">
+                    <h3 class="text-xl font-bold text-secondary-accent mb-3">
+                        <i class="fas fa-balance-scale mr-3"></i>Légal et conforme
+                    </h3>
+                    <p class="text-gray-700">
+                        Toutes les opérations de Birdeye Company sont conformes aux lois et réglementations pertinentes, garantissant vos droits.
+                    </p>
+                </div>
+
+                <div class="feature-highlight-card bg-white">
+                    <h3 class="text-xl font-bold text-purple-dynamic mb-3">
+                        <i class="fas fa-lock mr-3"></i>Sécurité des données garantie
+                    </h3>
+                    <p class="text-gray-700">
+                        Vos informations personnelles seront strictement protégées et utilisées uniquement pour le règlement des tâches.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Why This Job Exists Section -->
+        <section class="content-section-wrapper bg-white rounded-2xl shadow-lg">
+            <h2 class="font-display-modern text-3xl md:text-4xl font-bold text-tertiary-accent mb-8 text-center">
+                Vous vous demandez peut-être : pourquoi un tel emploi à temps partiel existe-t-il ?
+            </h2>
+            
+            <div class="bg-gradient-to-r from-orange-100 to-blue-100 rounded-xl p-8 mb-8">
+                <h3 class="text-2xl font-bold text-tertiary-accent mb-6">
+                    C'est parce que nous sommes différents des emplois à temps partiel traditionnels !
+                </h3>
+                <p class="text-lg leading-relaxed text-gray-700 mb-4">
+                    Les supermarchés traditionnels doivent dépenser de l'argent en publicité pour obtenir du trafic, 
+                    mais notre modèle est plus efficace : grâce aux comportements opérationnels d'utilisateurs réels, 
+                    nous aidons les produits à obtenir plus de recommandations et d'exposition sur la plateforme.
+                </p>
+                <p class="text-lg leading-relaxed text-gray-700">
+                    Vous êtes un élément important de ce processus, et nous sommes prêts à payer une rémunération raisonnable pour votre temps.
+                </p>
+            </div>
+            
+            <div class="text-center"> 
+                <button onclick="k2()" class="interactive-button-primary bg-gradient-to-r from-secondary-accent to-success-bright text-white px-12 py-4 rounded-full text-xl font-bold">
+                    Découvrez comment augmenter vos revenus
+                </button>
+            </div>
+        </section>
+
+        <!-- Call to Action Section -->
+        <section class="content-section-wrapper dynamic-gradient-background text-white rounded-2xl text-center">
+            <h2 class="font-display-modern text-3xl md:text-5xl font-bold mb-8 text-shadow-enhanced">
+                Rejoignez immédiatement Birdeye Company, commencez votre voyage d'emploi à temps partiel facile !
+            </h2>
+            <p class="text-xl mb-12 max-w-3xl mx-auto leading-relaxed">
+                Cliquez sur le bouton ci-dessous, inscrivez-vous immédiatement et obtenez votre compte de plateforme de tâches exclusif !
+            </p>
+            <button onclick="k2()" class="interactive-button-primary bg-white text-tertiary-accent px-16 py-6 rounded-full text-2xl font-bold animate-bounce-custom hover:bg-gray-100">
+                REJOIGNEZ MAINTENANT - COMMENCEZ À GAGNER !
+            </button>
+        </section>
+
+        <!-- Risk Disclosure -->
+        <section class="risk-disclosure-section">
+            <div class="flex items-start mb-6">
+                <i class="fas fa-exclamation-triangle text-warning-vibrant text-3xl mr-4 mt-1"></i>
+                <h3 class="text-3xl font-bold text-orange-800">⚠️ Divulgation des risques et avertissements importants</h3>
+            </div>
+            
+            <div class="space-y-6">
+                <div class="bg-white bg-opacity-80 rounded-lg p-6 border-l-4 border-red-500">
+                    <h4 class="text-xl font-bold text-red-700 mb-3">📋 Concernant cette opportunité d'emploi à temps partiel</h4>
+                    <ul class="text-gray-800 leading-relaxed space-y-2">
+                        <li class="flex items-start"><span class="text-red-500 mr-2">•</span><strong>Revenus variables :</strong> Les gains mentionnés (jusqu'à 300 euros par jour) sont des exemples théoriques. Les revenus réels dépendent entièrement de votre performance, du temps investi et de la disponibilité des tâches.</li>
+                        <li class="flex items-start"><span class="text-red-500 mr-2">•</span><strong>Aucune garantie de revenus :</strong> Aucun revenu minimum n'est garanti. Les résultats peuvent varier considérablement d'une personne à l'autre.</li>
+                        <li class="flex items-start"><span class="text-red-500 mr-2">•</span><strong>Disponibilité des tâches :</strong> Le nombre et la fréquence des tâches disponibles peuvent fluctuer selon les besoins commerciaux.</li>
+                    </ul>
+                </div>
+
+                 
+
+                <div class="bg-white bg-opacity-80 rounded-lg p-6 border-l-4 border-blue-500">
+                    <h4 class="text-xl font-bold text-blue-700 mb-3">🔒 Protection des données et confidentialité</h4>
+                    <ul class="text-gray-800 leading-relaxed space-y-2">
+                        <li class="flex items-start"><span class="text-blue-500 mr-2">•</span><strong>Collecte de données :</strong> Nous collectons uniquement les informations nécessaires pour l'exécution des tâches et les paiements.</li>
+                        <li class="flex items-start"><span class="text-blue-500 mr-2">•</span><strong>Utilisation des données :</strong> Vos données personnelles ne sont utilisées que pour les fins déclarées et ne sont pas vendues à des tiers.</li>
+                        <li class="flex items-start"><span class="text-blue-500 mr-2">•</span><strong>Sécurité :</strong> Bien que nous mettions en place des mesures de sécurité, aucun système n'est 100% sécurisé.</li>
+                    </ul>
+                </div>
+
+                <div class="bg-white bg-opacity-80 rounded-lg p-6 border-l-4 border-purple-500">
+                    <h4 class="text-xl font-bold text-purple-700 mb-3">⚠️ Avertissements généraux</h4>
+                    <ul class="text-gray-800 leading-relaxed space-y-2">
+                        <li class="flex items-start"><span class="text-purple-500 mr-2">•</span><strong>Méfiez-vous des arnaques :</strong> Ne payez jamais de frais d'inscription ou d'activation. Les emplois légitimes ne demandent pas de paiement initial.</li>
+                        <li class="flex items-start"><span class="text-purple-500 mr-2">•</span><strong>Informations personnelles :</strong> Ne partagez jamais vos mots de passe bancaires ou informations sensibles.</li>
+                        <li class="flex items-start"><span class="text-purple-500 mr-2">•</span><strong>Résultats passés :</strong> Les témoignages ou exemples de revenus ne garantissent pas les résultats futurs.</li>
+                        <li class="flex items-start"><span class="text-purple-500 mr-2">•</span><strong>Indépendance :</strong> Cette activité ne constitue pas un emploi salarié mais une prestation de services indépendante.</li>
+                    </ul>
+                </div>
+
+                <div class="bg-red-50 border-2 border-red-300 rounded-lg p-6">
+                    <p class="text-red-800 font-bold text-center text-lg">
+                        ⚠️ EN PARTICIPANT À CE PROGRAMME, VOUS RECONNAISSEZ AVOIR LU, COMPRIS ET ACCEPTÉ TOUS CES AVERTISSEMENTS ET LIMITATIONS ⚠️
+                    </p>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Footer -->
+    <footer class="privacy-footer-links">
+        <div class="max-w-6xl mx-auto px-4">
+            <!-- Navigation Links -->
+            <div class="grid md:grid-cols-4 gap-8 mb-8">
+                <div>
+                    <h4 class="text-lg font-bold text-white mb-4">
+                        <i class="fas fa-briefcase mr-2"></i>À propos de Birdeye
+                    </h4>
+                    <ul class="space-y-2 text-gray-300">
+                        <li><a href="#" class="hover:text-white transition-colors">Notre entreprise</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Notre mission</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Équipe</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Carrières</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-bold text-white mb-4">
+                        <i class="fas fa-users mr-2"></i>Support
+                    </h4>
+                    <ul class="space-y-2 text-gray-300">
+                        <li><a href="#" class="hover:text-white transition-colors">Centre d'aide</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">FAQ</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Nous contacter</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Chat en direct</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-bold text-white mb-4">
+                        <i class="fas fa-shield-alt mr-2"></i>Sécurité & Légal
+                    </h4>
+                    <ul class="space-y-2 text-gray-300">
+                        <li><a href="Privacy.html" class="hover:text-white transition-colors">Politique de confidentialité</a></li>
+                        <li><a href="terms.html" class="hover:text-white transition-colors">Conditions d'utilisation</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Politique de cookies</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Mentions légales</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-bold text-white mb-4">
+                        <i class="fas fa-share-alt mr-2"></i>Suivez-nous
+                    </h4>
+                    <div class="flex space-x-4 mb-4">
+                        <a href="#" class="text-gray-300 hover:text-white transition-colors text-2xl">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="text-gray-300 hover:text-white transition-colors text-2xl">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" class="text-gray-300 hover:text-white transition-colors text-2xl">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                        <a href="#" class="text-gray-300 hover:text-white transition-colors text-2xl">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                    </div>
+                    <p class="text-gray-300 text-sm">
+                        Restez connecté pour les dernières opportunités d'emploi
+                    </p>
+                </div>
+            </div>
+            
+            <!-- Divider -->
+            <hr class="border-gray-600 mb-6">
+            
+            <!-- Copyright and Company Information -->
+            <div class="grid md:grid-cols-2 gap-8 items-center">
+                <div class="text-center md:text-left">
+                    <div class="flex items-center justify-center md:justify-start mb-4">
+                        <div class="w-10 h-10 bg-gradient-to-r from-primary-accent to-secondary-accent rounded-full flex items-center justify-center mr-3">
+                            <i class="fas fa-eye text-white text-lg"></i>
+                        </div>
+                        <span class="text-2xl font-bold text-white">Birdeye Company</span>
+                    </div>
+                    <div class="text-gray-400 space-y-1">
+                        <p><i class="fas fa-map-marker-alt mr-2"></i>123 Rue de la Innovation, 75001 Paris, France</p> 
+                        <p><i class="fas fa-envelope mr-2"></i>contact@birdeye-23company.fr</p> 
+                    </div>
+                </div>
+                
+                <div class="text-center md:text-right">
+                    <div class="text-gray-400 space-y-2">
+                        <p class="text-lg font-semibold text-white">
+                            <i class="fas fa-certificate mr-2"></i>Certifications & Conformité
+                        </p>
+                        <p><i class="fas fa-check-circle text-green-400 mr-2"></i>Certifié ISO 27001 (Sécurité des données)</p>
+                        <p><i class="fas fa-check-circle text-green-400 mr-2"></i>Conforme RGPD</p>
+                        <p><i class="fas fa-check-circle text-green-400 mr-2"></i>Agréé par l'Autorité des Marchés Financiers</p>
+                        <p><i class="fas fa-check-circle text-green-400 mr-2"></i>Membre de la Chambre de Commerce de Paris</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Final Copyright Notice -->
+            <div class="text-center mt-8 pt-6 border-t border-gray-600">
+                <div class="space-y-2 text-gray-400">
+                    <p class="text-lg">
+                        &copy; 2024 <span class="font-bold text-white">Birdeye Company SAS</span>. Tous droits réservés.
+                    </p>
+                    <p class="text-sm">
+                        Marques déposées et logos sont la propriété de leurs propriétaires respectifs. 
+                        Ce site utilise des cookies pour améliorer votre expérience utilisateur.
+                    </p>
+                    <p class="text-sm">
+                        <i class="fas fa-globe mr-2"></i>Site développé avec ❤️ en France | 
+                        <i class="fas fa-shield-alt mr-2"></i>Hébergement sécurisé SSL | 
+                        <i class="fas fa-clock mr-2"></i>Dernière mise à jour: Décembre 2024
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Floating Action Button -->
+    <button onclick="k2()" class="floating-action-button">
+        <i class="fab fa-whatsapp mr-3"></i>Commencer maintenant !
+    </button>
+
+    <script>
+        // WhatsApp function
+        function k2() {
+            window.open('https://wa.me/1234567890', '_blank');
+        }
+
+        // Dark mode detection
+        if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+            document.documentElement.classList.add('dark');
+        }
+        
+        window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', event => {
+            if (event.matches) {
+                document.documentElement.classList.add('dark');
+            } else {
+                document.documentElement.classList.remove('dark');
+            }
+        });
+
+        // Smooth scroll for better UX
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Intersection Observer for animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        // Observe all content sections
+        document.querySelectorAll('.content-section-wrapper').forEach(section => {
+            section.style.opacity = '0';
+            section.style.transform = 'translateY(20px)';
+            section.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+            observer.observe(section);
+        });
+    </script>
+</body>
+</html>
